@@ -26,7 +26,7 @@
     <div class="col-md-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea class="form-control" col="4" name="description" placeholder="Ecrire un article"></textarea>
+            <textarea class="description" col="4" name="description" placeholder="Ecrire un article"></textarea>
             <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
     </div>

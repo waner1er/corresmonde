@@ -28,7 +28,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea class="form-control" style='height:350px'col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
+            <textarea class="form-control description" name="description" style='height:350px'col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
             <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
     </div>
