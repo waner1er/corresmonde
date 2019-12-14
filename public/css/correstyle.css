@@ -1,0 +1,73 @@
+/* body{
+   / background:#20B2AA!important;
+}*/
+.jumbotron{
+    /* background:transparent!important; */
+    text-align: center;
+    height: 89vh;
+    background: url('../img/fullPage.jpg')no-repeat center fixed;
+
+
+}
+.titre{
+    background:rgba(255,255,255,0.8);
+    border:1px solid #20B2AA;
+   border-radius: 555px 25px 15px 25px/25px 5px 35px 555px;
+   margin:12rem 0;
+}
+
+.jumbotron h1 {
+    color:#20B2AA;
+    font-weight: 600;
+    text-shadow:2px 2px 2px #000;
+    font-size: 3.5rem;
+  }
+.jumbotron .lead {
+    color:#000;
+    font-weight: 500;
+    /* text-shadow:2px 1px 2px #000; */
+  }
+
+.jumbotron blockquote{
+
+  }
+.jumbotron a{
+    background:#fff;
+    color:#000;
+    border:none;
+    transition:0.5s;
+}
+.imageFull{
+    justify-content: center;
+}
+
+.jumbotron a:hover{    border:none;
+
+    background:#20B2AA;
+    color:#fff;
+    transition:1s;
+    opacity: 1;
+}
+@media (max-width:690px){
+    .jumbotron h1{
+      font-size: 2.5rem;
+    }
+
+  }
+@media (max-width:470px){
+    .jumbotron h1{
+      font-size: 1.5rem;
+    }
+    .titre{
+        margin:8rem 0;
+        }
+  }
+  #test{
+      border:1px solid black;
+      box-shadow: 3px 3px 3px black;
+  }
+
+  #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+    height:600px;
+}
+
