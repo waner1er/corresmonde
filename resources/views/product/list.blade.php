@@ -4,7 +4,7 @@
   <br>
    <div class="row">
         <div class="col-12">
-            <a href="{{ route('products.create') }}" class="btn btn-success mb-2">Add</a>
+            <a href="{{ route('products.create') }}" class="btn btn-success mb-2">Ajouter</a>
 
           <table class="table table-bordered" id="laravel_crud">
            <thead>
@@ -21,7 +21,7 @@
               <tr>
                  <td>{{ $product->numArticle }}</td>
                  <td>{{ $product->title }}</td>
-                 <td style=>{{ Str::limit($product->description) }}</td>
+                 <td><div style="height:140px;overflow:hidden">{!!  $product->description !!}</div></td>
               <td>Le{{  date('d/m/Y, à H', strtotime($product->created_at))  }} h {{date('i', strtotime($product->created_at))}} </td>
                  <td style="display:flex;justify-content: space-around;"><a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary">Modifier</a>
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/sandstone.css">
     <link rel="stylesheet" href="css/adminCss.css">
-
+    <script src="https://kit.fontawesome.com/0cede21d6d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Document</title>
@@ -23,9 +23,9 @@
                   <div class="sidebar-heading text-success">Tableau de bord </div>
                   <div class="list-group list-group-flush">
                     <a href="/admin" class="list-group-item list-group-item-action bg-light">Tableau principal</a>
-                    <a href="/products" class="list-group-item list-group-item-action bg-light">Docs</a>
-                    <a href="/deuxieme" class="list-group-item list-group-item-action bg-light">Deuxième</a>
-                    <a href="/troisieme" class="list-group-item list-group-item-action bg-light">Troisième</a>
+                    <a href="/projects" class="list-group-item list-group-item-action bg-light">Objectifs du projet</a>
+                    <a href="/admin" class="list-group-item list-group-item-action bg-light">Déroulé du projet</a>
+                    <a href="/products" class="list-group-item list-group-item-action bg-light">Travaux des collégiens</a>
                     <a href="/quatrieme" class="list-group-item list-group-item-action bg-light">Quatrième</a>
                     <a href="cinquieme" class="list-group-item list-group-item-action bg-light">Cinquième</a>
                   </div>
@@ -36,7 +36,7 @@
                 <div id="page-content-wrapper">
 
                   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <button class="btn btn-primary" id="menu-toggle">Barre de menu</button>
+                    <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-arrow-left"></i>  Barre de menu</button>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -118,9 +118,18 @@ crossorigin="anonymous">
             $("#menu-toggle").click(function(e) {
               e.preventDefault();
               $("#wrapper").toggleClass("toggled");
+              $(".fa-arrow-left").toggle();
+
             });
         </script>
+<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+<script>
+    tinymce.init({
+        selector:'textarea.description',
+        height:800
 
+    });
+</script>
 
 
 </body>

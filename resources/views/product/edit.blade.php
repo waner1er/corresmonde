@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.edit')
 
 @section('content')
 <h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
@@ -12,7 +12,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Titre</strong>
-            <input type="text" name="title" class="form-control" placeholder="Titrevalue="{{ $product_info->title }}">"
+            <input type="text" name="title" class="form-control" value="{{ $product_info->title }}">
             <span class="text-danger">{{ $errors->first('title') }}</span>
         </div>
     </div>
@@ -20,7 +20,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Numéro d'Article</strong>
-            <input style="width:60px;"type="number" max="500" min="0" class="form-control" name="numArticle" placeholder="0">
+            <input style="width:60px;"type="number" max="500" min="0" class="form-control" name="numArticle" value="{{ $product_info->numArticle }}">
             <span class="text-danger">{{ $errors->first('numArticle') }}</span>
         </div>
     </div>

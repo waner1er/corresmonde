@@ -2,9 +2,12 @@
 
 @section('content')
 
-<h2>Descriptif du projet</h2>
+@foreach($projects as $project)
+                        <h2>{{ $project->projectTitle }}</h2> <br>
+                        Le{{  date('d/m/Y, à H', strtotime($project->created_at))  }} h {{date('i', strtotime($project->created_at))}} </td>
 
-Objectifs du projet
+                     >
+                        {!! $project->projectContent  !!}
 
-
+              @endforeach
 @endsection

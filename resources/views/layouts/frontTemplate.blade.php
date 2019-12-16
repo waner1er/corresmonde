@@ -32,10 +32,10 @@
                       <a class="nav-link" href="/projet">Le projet</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/deroule">Déroulé du projet </a>
+                      <a class="nav-link" href="#">Déroulé du projet </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/ressources">Espace docs</a>
+                      <a class="nav-link" href="#">Espace docs</a>
                     </li>
 
                     <li class="nav-item dropdown">

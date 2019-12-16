@@ -29,7 +29,7 @@ class PublicProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        //
     }
 
     /**
@@ -40,15 +40,7 @@ class PublicProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'numArticle' =>'required',
-            'description' => 'required',
-        ]);
-
-        Product::create($request->all());
-
-        return Redirect::to('products')->with('success','Greate! Product created successfully.');
+        //
     }
 
     /**
@@ -59,7 +51,7 @@ class PublicProductController extends Controller
      */
     public function show(Request $request)
     {
-
+        //
     }
 
     /**
@@ -87,17 +79,7 @@ class PublicProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'numArticle'=>'required',
-            'description' => 'required',
-        ]);
-
-        $update = ['title' => $request->title,'numArticle' =>$request->numArticle, 'description' => $request->description];
-        Product::where('id',$id)->update($update);
-
-        return Redirect::to('products')
-       ->with('success','Great! Product updated successfully');
+        //
     }
 
     /**
@@ -108,8 +90,6 @@ class PublicProductController extends Controller
      */
     public function destroy($id)
     {
-        Product::where('id',$id)->delete();
-
-        return Redirect::to('products')->with('success','Product deleted successfully');
+       //
     }
 }
