@@ -23,7 +23,17 @@ class ProductController extends Controller
     {
         $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
 
+
         return view('product.list',$data);
+
+    }
+    public function publicIndex()
+    {
+        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+
+
+        return view('frontend.ressources',$data);
+
     }
 
 

@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/sandstone.css">
     <link rel="stylesheet" href="css/adminCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <script src="https://kit.fontawesome.com/0cede21d6d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+    {{-- DropZone --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
     <title>Document</title>
+
 </head>
 <style>
 
@@ -26,7 +29,7 @@
                     <a href="/projects" class="list-group-item list-group-item-action bg-light">Objectifs du projet</a>
                     <a href="/admin" class="list-group-item list-group-item-action bg-light">Déroulé du projet</a>
                     <a href="/products" class="list-group-item list-group-item-action bg-light">Travaux des collégiens</a>
-                    <a href="/quatrieme" class="list-group-item list-group-item-action bg-light">Quatrième</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">album des photo</a>
                     <a href="cinquieme" class="list-group-item list-group-item-action bg-light">Cinquième</a>
                   </div>
                 </div>
@@ -106,11 +109,12 @@
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+{{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-crossorigin="anonymous">
-</script>
-
+crossorigin="anonymous"></script> --}}
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 
 <!-- Menu Toggle Script -->
 
@@ -122,15 +126,13 @@ crossorigin="anonymous">
 
             });
         </script>
-<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
-<script>
-    tinymce.init({
-        selector:'textarea.description',
-        height:800
+        <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });</script>
 
-    });
-</script>
-
+{{-- <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script> --}}
 
 </body>
 </html>

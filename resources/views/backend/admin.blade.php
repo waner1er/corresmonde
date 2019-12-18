@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Bienvenue {{ Auth::user()->name }}  !!
+                <div class="card-header"style="text-transform:capitalize">Bienvenue {{ Auth::user()->name }}  !!
                 </div>
 
                 <div class="card-body">
@@ -17,7 +17,7 @@
                     @endif
 
 
-                    <h1 class="text-success">Vous êtes connecté</h1>
+                    <h1 class="text-success">Vous êtes connecté </h1>
                 </div>
             </div>
             <br>

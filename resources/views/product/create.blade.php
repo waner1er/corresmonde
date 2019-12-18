@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="">
-<h2 style="margin-top: 12px;" class="text-center">Add Product</a></h2>
+<h2 style="margin-top: 12px;" class="text-center">Ecrire un article</a></h2>
 <br>
 
 <form action="{{ route('products.store') }}" method="POST" name="add_product">

@@ -1,7 +1,7 @@
 @extends('layouts.edit')
 
 @section('content')
-<h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
+<h2 style="margin-top: 12px;" class="text-center">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
 <br>
 
 <form style="width:100%"action="{{ route('products.update', $product_info->id) }}" method="POST" name="update_product">

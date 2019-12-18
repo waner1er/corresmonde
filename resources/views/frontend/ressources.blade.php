@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1>Parcours</h1>
+<h1>Travaux des élèves </h1>
 <div class="row">
     <div class="col-lg-8">
-        <h1>présentation du travail des élèves</h1>
+        <h3>Un petit texte qui explique la démarche en 3 mots comment s'organise le travail des élèves </h3>
     </div>
 
     <div class="col-lg-4">

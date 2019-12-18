@@ -12,7 +12,6 @@
 */
 
 // FRONTEND
-use App\Http\Controllers\UsersController;
 
 Route::get('/', 'WelcomeController@accueil');
 Route::resource('ressources', 'PublicProductController');
@@ -23,6 +22,7 @@ Route::resource('projet', 'PublicProjectController');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::resource('products', 'ProductController');
 Route::resource('projects', 'ProjectController');
+
 
 Auth::routes();
 

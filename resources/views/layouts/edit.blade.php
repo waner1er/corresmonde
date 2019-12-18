@@ -46,13 +46,15 @@ crossorigin="anonymous">
               $("#wrapper").toggleClass("toggled");
             });
         </script>
-<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
-<script>
-    tinymce.init({
-        selector:'textarea.description',
-        height:800,
+{{-- <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script> --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
 
-    });
+<script>
+    ClassicEditor
+        .create( document.querySelector( '.description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 
 
