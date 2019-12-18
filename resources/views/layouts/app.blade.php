@@ -11,12 +11,10 @@
     <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
     {{-- DropZone --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
-    <title>Document</title>
+    <title>D'une terre à l'autre Corresmonde - Admin </title>
 
 </head>
-<style>
 
-</style>
 <body>
 
         <div class="d-flex" id="wrapper">

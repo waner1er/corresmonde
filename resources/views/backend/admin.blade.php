@@ -1,11 +1,22 @@
 @extends('layouts.app')
-
 @section('content')
+
+
+<style>
+.card-header{
+text-transform:capitalize;
+}
+.newUser{
+    justify-content: space-around
+}
+</style>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"style="text-transform:capitalize">Bienvenue {{ Auth::user()->name }}  !!
+                <div class="card-header">Bienvenue {{ Auth::user()->name }}  !!
                 </div>
 
                 <div class="card-body">
@@ -22,7 +33,7 @@
             </div>
             <br>
 
-            <div class="row" style="justify-content: space-around">
+            <div class="row newUser">
                 <div>
                     <h3>Enregistrer un nouvel administrateur :</h3>
                 </div>

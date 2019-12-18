@@ -1,6 +1,7 @@
 @extends('layouts.frontTemplate')
 
 @section('content')
+
 <style>
     .rightMenuTitle{
         text-transform: uppercase;
@@ -9,6 +10,7 @@
         text-align: center;
     }
 </style>
+
 <div class="row">
     <div class="col-lg-8">
         <h1 class="text-success title">{{ $product_info->title }}</h1>

@@ -1,8 +1,10 @@
 @extends('layouts.edit')
 
 @section('content')
-<h2 style="margin-top: 12px;" class="text-center">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
-<br>
+
+<h2  class="text-center Subtitle">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
+<a href="/products">Retour</a>
+
 
 <form style="width:100%"action="{{ route('products.update', $product_info->id) }}" method="POST" name="update_product">
 {{ csrf_field() }}
@@ -28,7 +30,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea class="form-control description" name="description" style='height:350px'col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
+            <textarea class="form-control description" name="description" col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
             <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
     </div>

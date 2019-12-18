@@ -47,5 +47,10 @@
       margin-left: -15rem;
     }
   }
-
-
+  .SubTitle {
+    "margin-top: 12px;
+}
+.cellContent{
+    height:140px;
+    overflow:hidden
+}

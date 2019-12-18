@@ -1,8 +1,11 @@
 @extends('layouts.edit')
 
 @section('content')
+
 <link rel="stylesheet" href="">
-<h2 style="margin-top: 12px;" class="text-center">Ecrire un article</a></h2>
+<h2  class="SubTitle text-center">Ecrire un article</a></h2>
+<a href="/products">Retour</a>
+
 <br>
 
 <form action="{{ route('products.store') }}" method="POST" name="add_product">
@@ -30,5 +33,7 @@
 </div>
 
 </form>
+<a href="/products">Retour</a>
+
 
 @endsection

@@ -9,7 +9,7 @@
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Document</title>
+    <title>D'une terre à l'autre Corresmonde </title>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDOFiQ2FjQlGdyihZp4FV_cLqGAQWgISfk" type="text/javascript"></script>
     <style type="text/css">
         #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
@@ -87,7 +87,7 @@
                 </div>
               </nav>
 
-             
+
 
         <div class="content">
                 @yield('content')
