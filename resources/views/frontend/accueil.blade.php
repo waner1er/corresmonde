@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="jumbotron" >
+  <div class="jumbotron welcome" >
     <div class="row ">
       <div class="col-2"></div>
       <div class="col-8 titre">

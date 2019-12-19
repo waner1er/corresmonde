@@ -44,7 +44,7 @@
     }
 
     #wrapper.toggled #sidebar-wrapper {
-      margin-left: -15rem;
+      margin-left: -20rem;
     }
   }
   .SubTitle {
@@ -54,3 +54,4 @@
     height:140px;
     overflow:hidden
 }
+

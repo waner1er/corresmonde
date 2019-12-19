@@ -3,10 +3,13 @@
 @section('content')
 
 @foreach($projects as $project)
-                        <h2>{{ $project->projectTitle }}</h2> <br>
-                        Le{{  date('d/m/Y, à H', strtotime($project->created_at))  }} h {{date('i', strtotime($project->created_at))}} </td>
+<div class="jumbotron jumbotron-fluid Welcome">
+    <div class="container">
+      <h1 class="display-4">{{ $project->projectTitle }}</h1>
+      <p class="lead">Le {{  date('d/m/Y, à H:i', strtotime($project->created_at))  }}</p>
+    </div>
+  </div>
 
-                     >
                         {!! $project->projectContent  !!}
 
               @endforeach

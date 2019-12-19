@@ -57,7 +57,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'numArticle' =>'required',
+            'numArticle' =>'numeric',
             'description' => 'required',
         ]);
 
@@ -109,8 +109,7 @@ class ProductController extends Controller
         $update = ['title' => $request->title,'numArticle' =>$request->numArticle, 'description' => $request->description];
         Product::where('id',$id)->update($update);
 
-        return Redirect::to('products')
-       ->with('success','Great! Product updated successfully');
+        return Redirect::to('products');
     }
 
     /**

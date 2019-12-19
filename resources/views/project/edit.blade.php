@@ -16,7 +16,13 @@
             <span class="text-danger">{{ $errors->first('projectTitle') }}</span>
         </div>
     </div>
-
+    <div class="col-lg-12">
+        <div class="form-group">
+            <strong>Numéro d'Article</strong>
+            <input style="width:60px;"type="number"  min="0" class="form-control" name="numArticle" value="{{ $project_info->numArticle }}">
+            <span class="text-danger">{{ $errors->first('numArticle') }}</span>
+        </div>
+    </div>
 
 
     <div class="col-lg-12">
