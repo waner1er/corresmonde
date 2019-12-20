@@ -1,6 +1,7 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.edit')
 
 @section('content')
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 <style>
     .rightMenuTitle{
@@ -13,7 +14,8 @@
 
 <div class="row">
     <div class="col-lg-8">
-        <h1 class="text-success title">{{ $product_info->title }}</h1>
+        <h1 class="text-success title">{{ $product_info->title }} <br><a href="/ressources" class="btn btn-info title">Retour</a> </h1>
+
 
 
         <div class="">

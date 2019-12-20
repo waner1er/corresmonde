@@ -22,7 +22,12 @@ Route::resource('projet', 'PublicProjectController');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::resource('products', 'ProductController');
 Route::resource('projects', 'ProjectController');
+Route::resource('gallery', 'GalleryController');
 
+
+Route::get('/portfolio', 'GalleryController@index');
+Route::post('gallery', 'GalleryController@store');
+Route::get('gallery', 'GalleryController@show');
 
 Auth::routes();
 

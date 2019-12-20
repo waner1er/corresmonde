@@ -10,8 +10,9 @@
     </div>
   </div>
 
-                        {!! $project->projectContent  !!}
-
+    <div class="card">
+         {!! $project->projectContent  !!}
+    </div>
               @endforeach
 
 @endsection

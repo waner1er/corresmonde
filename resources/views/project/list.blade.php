@@ -21,7 +21,7 @@
 
               @endforeach
 
-                 <td style="display:flex;justify-content: space-around;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-primary">Modifier</a>
+                 <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div>
 
           {!! $projects->links() !!}
        </div>

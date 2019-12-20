@@ -39,10 +39,10 @@
 
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="ressources" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Travaux d'élèves
+                        Productions
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/ressources">Travaux des collégiens</a>
+                        <a class="dropdown-item" href="/ressources">Productions</a>
                         <a class="dropdown-item" href="/map">Travaux de la MAST</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Portfolio des rencontres? </a>
@@ -54,7 +54,7 @@
                             @if (Route::has('login'))
                                         @auth
                                         <li>
-                                        <a class="nav-link text-warning" href="/admin">Espace d'administration </a>
+                                        <a class="nav-link text-success" href="/admin">Espace d'administration </a>
                                         </li>
 
                                         <li>
@@ -88,7 +88,7 @@
 
 
 
-        <div class="content">
+        <div class="container-fluid">
                 @yield('content')
         </div>
 

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
     <link rel="stylesheet" href="css/sandstone.css">
     <link rel="stylesheet" href="css/adminCss.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <script src="https://kit.fontawesome.com/0cede21d6d.js" crossorigin="anonymous"></script>
 
     <title>D'une terre à l'autre Corresmonde - Admin </title>
@@ -27,7 +29,7 @@
                     <a href="#" class="list-group-item list-group-item-action bg-light">Comprendre les migrations</a>
                 </div>
                     <div class="sidebar-heading text-success">Productions
-                    <div class="sidebar-heading text-success">Collegiens
+                    <div class="sidebar-heading text-success">Collégiens
                         <a href="/products" class="list-group-item list-group-item-action bg-light">Parcours</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Anthologies</a>
                     </div>
@@ -36,7 +38,7 @@
                     <a href="#" class="list-group-item list-group-item-action bg-light">Cartographie</a>
                     </div>
                   </div>
-                  <a href="#" class="list-group-item list-group-item-action bg-light text-success"><h5>Portfolio</h5></a>
+                  <a href="/gallery" class="list-group-item list-group-item-action bg-light text-success"><h5>Portfolio</h5></a>
 
                 </div>
                 <!-- /#sidebar-wrapper -->
@@ -99,7 +101,7 @@
                   <div class="container-fluid">
                                 @yield('content')
 
-                </div>
+                  </div>
                 </div>
 
               </div>
@@ -117,19 +119,30 @@ crossorigin="anonymous">
 </script>
 
 <script src="bootstrap/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
 
+        <script>
+            jQuery(document).ready(function()
+            {
 
-<!-- Menu Toggle Script -->
+                $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                $(".fa-arrow-left").toggle();
+                });
 
-       <script>
-            $("#menu-toggle").click(function(e) {
-              e.preventDefault();
-              $("#wrapper").toggleClass("toggled");
-              $(".fa-arrow-left").toggle();
+                $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                    event.preventDefault();
+                    $(this).ekkoLightbox({
+                        alwaysShowClose: true,
+                    });
+                });
 
             });
         </script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 
 </body>
 </html>

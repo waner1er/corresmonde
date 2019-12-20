@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-decoupled-document": "^16.0.0",
         "lightbox2": "^2.11.1",
         "tinymce": "^5.1.4"
     }
