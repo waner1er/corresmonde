@@ -1,10 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.layoutPortfolio')
 
 @section('content')
+<style>
+
+    .jumbotron-fluid{
+        text-align:center; margin-bottom:2rem;
+    }
+
+    .retour{
+    display: flex;
+    margin:2rem 4rem;
+    justify-content: center;
+    }
+
+</style>
 <div class="jumbotron-fluid"style="text-align:center;">
     <div class="container">
         <h1 class="display-4">Portfolio</h1>
         <p class="lead">Liste de toutes les photos</p>
+        <p class="lead" >pour insérer -> clic sur l'image ->  clic droit -> copier l'adresse de l'image </p>
       </div>
 </div>
 <div class="button" style="margin:25px 0">
@@ -25,5 +39,9 @@
 
         @endforeach
     </div>
+    <div class="retour">
 
+        <a class="btn btn-info " href="/admin">Retour</a>
+
+    </div>
 @endsection

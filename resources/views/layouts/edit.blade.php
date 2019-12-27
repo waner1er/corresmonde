@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/sandstone.css">
     <link rel="stylesheet" href="css/adminCss.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>D'une terre à l'autre Corresmonde </title>
 
@@ -44,16 +44,42 @@ crossorigin="anonymous">
               $("#wrapper").toggleClass("toggled");
             });
         </script>
-{{-- <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script> --}}
-<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 
 <script>
-    ClassicEditor
-        .create( document.querySelector( '.description' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    var editor_config = {
+    path_absolute : "/",
+    selector: "textarea.description",
+    plugins: [
+      "advlist autolink lists link image imagetools charmap print preview hr anchor pagebreak",
+      "searchreplace wordcount visualblocks visualchars code fullscreen",
+      "insertdatetime media nonbreaking save table contextmenu directionality",
+      "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+    relative_urls: false,
+    file_picker_callback : function(callback, value,meta) {
+      var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+      var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+
+
+      tinymce.activeEditor.windowManager.openUrl({
+        url : '/gallery',
+        title : 'Filemanager',
+        width : x * 0.8,
+        height : y * 0.8,
+        onMessage: (api,message)=> {
+            callback(message.content, {text : message.text})
+        }
+      })
+    }
+  };
+
+  tinymce.init(editor_config);
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+
 
 
 </body>

@@ -1,7 +1,7 @@
 @extends('layouts.edit')
 
 @section('content')
-
+a   
 <h2  class="text-center Subtitle">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
 <a href="/products">Retour</a>
 
@@ -30,7 +30,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea class="form-control description" name="description" col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
+            <textarea style="height:550px;" class="form-control description" name="description" col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
             <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
     </div>
@@ -41,4 +41,6 @@
 </div>
 
 </form>
+
+
 @endsection

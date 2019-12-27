@@ -14,9 +14,12 @@
 // FRONTEND
 
 Route::get('/', 'WelcomeController@accueil');
+
 Route::resource('ressources', 'PublicProductController');
 Route::resource('projet', 'PublicProjectController');
-
+Route::get('/periples', function () {
+        return view('frontend/periples');
+    });
 
 // ADMIN
 Route::get('/admin', 'AdminController@index')->name('admin');
@@ -29,7 +32,10 @@ Route::get('/portfolio', 'GalleryController@index');
 Route::post('gallery', 'GalleryController@store');
 Route::get('gallery', 'GalleryController@show');
 
+
+
 Auth::routes();
+
 
 
 

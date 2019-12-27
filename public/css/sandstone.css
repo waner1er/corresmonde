@@ -555,6 +555,7 @@
    width: 100%;
    padding-right: 15px;
    padding-left: 15px;
+   padding-top: 2rem;
    margin-right: auto;
    margin-left: auto;
  }
@@ -584,7 +585,7 @@
  }
 
  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-   width: 100%;
+   width: 95%;
    padding-right: 15px;
    padding-left: 15px;
    margin-right: auto;
@@ -5607,6 +5608,7 @@
  }
 
  .jumbotron-fluid {
+    margin-top: 2rem;
    padding-right: 0;
    padding-left: 0;
    border-radius: 0;
