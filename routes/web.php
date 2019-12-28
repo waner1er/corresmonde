@@ -44,15 +44,6 @@ Auth::routes();
 
 
 
-
-
-
-
-
-
-
-
-
 // Route::get('/projet', function () {
 //     return view('frontend/projet');
 // });

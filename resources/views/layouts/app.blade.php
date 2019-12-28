@@ -38,7 +38,6 @@
                     <a href="#" class="list-group-item list-group-item-action bg-light">Cartographie</a>
                     </div>
                   </div>
-                  <a href="/gallery" class="list-group-item list-group-item-action bg-light text-success"><h5>Portfolio</h5></a>
 
                 </div>
                 <!-- /#sidebar-wrapper -->
