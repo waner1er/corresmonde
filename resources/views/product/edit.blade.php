@@ -1,7 +1,9 @@
-@extends('layouts.edit')
+@extends('layouts.app')
 
 @section('content')
-a   
+<link rel="stylesheet" href="../../css/sandstone.css">
+<link rel="stylesheet" href="../../css/adminCss.css">
+   
 <h2  class="text-center Subtitle">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
 <a href="/products">Retour</a>
 

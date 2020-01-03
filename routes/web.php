@@ -32,7 +32,9 @@ Route::get('/portfolio', 'GalleryController@index');
 Route::post('gallery', 'GalleryController@store');
 Route::get('gallery', 'GalleryController@show');
 
-
+Route::get('/map', function () {
+    return view('frontend/map');
+});
 
 Auth::routes();
 
@@ -59,9 +61,7 @@ Auth::routes();
 // Route::get('/infos', function () {
 //     return view('frontend/infos');
 // });
-// Route::get('/map', function () {
-//     return view('frontend/map');
-// });
+
 
 
 // Route::get('/premier', function () {

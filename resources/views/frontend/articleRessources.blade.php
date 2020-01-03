@@ -1,7 +1,9 @@
-@extends('layouts.edit')
+@extends('layouts.frontTemplate')
 
 @section('content')
-
+<link rel="stylesheet" href="../../css/sandstone.css">
+<link rel="stylesheet" href="../../css/correstyle.css">
+   
 <style>
     .rightMenuTitle{
         text-transform: uppercase;
@@ -13,8 +15,7 @@
 
 <div class="row">
     <div class="col-lg-8">
-        <h1 class="text-success title">{{ $product_info->title }} <br><a href="/ressources" class="btn btn-info title">Retour</a> </h1>
-
+        <h1 class="text-success title">{{ $product_info->title }}</h1>
 
 
         <div class="">

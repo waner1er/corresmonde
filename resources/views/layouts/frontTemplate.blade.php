@@ -29,20 +29,19 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Déroulé du projet </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Espace docs</a>
-                    </li>
-
+                   
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="ressources" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Productions
+                        Travaux d'élèves
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/ressources">Productions</a>
-                        <a class="dropdown-item" href="/periples">Périples</a>
+                        <a class="dropdown-item" href="/ressources">Parcours</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Portfolio des rencontres? </a>
                       </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-center"  href="/periples">Périples<br> <span style="text-transform: lowercase;">(exposition de la MAST)</span></a>
                     </li>
                 </ul>
 

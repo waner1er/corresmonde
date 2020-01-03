@@ -1,6 +1,8 @@
-@extends('layouts.edit')
+@extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="../../css/sandstone.css">
+<link rel="stylesheet" href="../../css/adminCss.css">
 <h2 style="margin-top: 12px;" class="text-center">Le projet</a></h2>
 <br>
 
@@ -16,12 +18,12 @@
             <span class="text-danger">{{ $errors->first('projectTitle') }}</span>
         </div>
     </div>
-    
+
 
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea style="height:550px;"class="description" name="projectContent"  name="projectContent" placeholder="Enter projectContent" >{{ $project_info->projectContent }}</textarea>
+            <textarea style="height:550px;"class="description" name="description"  name="projectContent" placeholder="Enter projectContent" >{{ $project_info->projectContent }}</textarea>
             <span class="text-danger">{{ $errors->first('projectContent') }}</span>
         </div>
     </div>
