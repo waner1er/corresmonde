@@ -20,8 +20,8 @@
                  <td></td>
 
               @endforeach
+              <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div>
 
-                 <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div>
 
           {!! $projects->links() !!}
        </div>
