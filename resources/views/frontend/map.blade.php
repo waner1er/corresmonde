@@ -1,14 +1,13 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.app')
 
 @section('content')
+
 <br>
 
-        <img src="img/expo-photos-semaine-interculturelle-et-solidaire-2019_page_5.jpeg" alt=""><br>
 
-
-<div class="col-lg-5" id="map">
-        <!-- Ici s'affichera la carte -->
+<div id="map"class="col-lg-8">
+    <!-- Ici s'affichera la carte -->
     </div>
-
+    <a style="font-size: 8px;" href="https://icons8.com/icon/12064/élèves">icons by Icons8</a>
 
 @endsection

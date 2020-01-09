@@ -53,6 +53,11 @@ return [
             'root' => public_path(),
             'visibility' => 'public',
         ],
+        'files' => [
+            'driver' => 'local',
+            'root' => public_path() . ('/files'),
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

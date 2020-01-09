@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
-<br>
+<link rel="stylesheet" href="../../css/sandstone.css">
+<link rel="stylesheet" href="../../css/adminCss.css">
+   
+<h2  class="text-center Subtitle">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
+<a href="/products">Retour</a>
+
 
 <form style="width:100%"action="{{ route('products.update', $product_info->id) }}" method="POST" name="update_product">
 {{ csrf_field() }}
@@ -12,7 +16,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Titre</strong>
-            <input type="text" name="title" class="form-control" placeholder="Titrevalue="{{ $product_info->title }}">"
+            <input type="text" name="title" class="form-control" value="{{ $product_info->title }}">
             <span class="text-danger">{{ $errors->first('title') }}</span>
         </div>
     </div>
@@ -20,7 +24,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Numéro d'Article</strong>
-            <input style="width:60px;"type="number" max="500" min="0" class="form-control" name="numArticle" placeholder="0">
+            <input style="width:60px;"type="number" max="500" min="0" class="form-control" name="numArticle" value="{{ $product_info->numArticle }}">
             <span class="text-danger">{{ $errors->first('numArticle') }}</span>
         </div>
     </div>
@@ -28,7 +32,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea class="form-control" style='height:350px'col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
+            <textarea style="height:550px;" class="form-control description" name="description" col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
             <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
     </div>
@@ -39,4 +43,6 @@
 </div>
 
 </form>
+
+
 @endsection

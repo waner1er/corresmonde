@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
     <link rel="stylesheet" href="css/sandstone.css">
     <link rel="stylesheet" href="css/adminCss.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+    <script src="https://kit.fontawesome.com/0cede21d6d.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>D'une terre à l'autre Corresmonde - Admin </title>
 
-    <title>Document</title>
 </head>
-<style>
 
-</style>
 <body>
 
         <div class="d-flex" id="wrapper">
 
                 <!-- Sidebar -->
                 <div class="bg-light border-right" id="sidebar-wrapper">
-                  <div class="sidebar-heading text-success">Tableau de bord </div>
-                  <div class="list-group list-group-flush">
-                    <a href="/admin" class="list-group-item list-group-item-action bg-light">Tableau principal</a>
-                    <a href="/products" class="list-group-item list-group-item-action bg-light">Docs</a>
-                    <a href="/deuxieme" class="list-group-item list-group-item-action bg-light">Deuxième</a>
-                    <a href="/troisieme" class="list-group-item list-group-item-action bg-light">Troisième</a>
-                    <a href="/quatrieme" class="list-group-item list-group-item-action bg-light">Quatrième</a>
-                    <a href="cinquieme" class="list-group-item list-group-item-action bg-light">Cinquième</a>
+                    <a href="/admin"class="sidebar-heading text-success btn">Tableau de bord</a>
+                  <div class="sidebar-heading text-success">Objectifs
+                    <a href="/projects" class="list-group-item list-group-item-action bg-light">Objectifs du projet</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Déroulé du projet</a>
+                </div>
+                <div class="sidebar-heading text-success">
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Comprendre les migrations</a>
+                </div>
+                    <div class="sidebar-heading text-success">Productions
+                    <div class="sidebar-heading text-success">Collégiens
+                        <a href="/products" class="list-group-item list-group-item-action bg-light">Parcours</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Anthologies</a>
+                    </div>
+                    <div class="sidebar-heading text-success">MAST
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Exposition</a>
+                    </div>
                   </div>
+
                 </div>
                 <!-- /#sidebar-wrapper -->
 
@@ -36,7 +45,7 @@
                 <div id="page-content-wrapper">
 
                   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <button class="btn btn-primary" id="menu-toggle">Barre de menu</button>
+                    <button class="btn btn-info" id="menu-toggle"><i class="fas fa-arrow-left"></i>  Barre de menu</button>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -90,7 +99,7 @@
                   <div class="container-fluid">
                                 @yield('content')
 
-                </div>
+                  </div>
                 </div>
 
               </div>
@@ -106,19 +115,83 @@
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-crossorigin="anonymous">
-</script>
 
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
 
-<!-- Menu Toggle Script -->
+        <script>
+            jQuery(document).ready(function()
+            {
 
-       <script>
-            $("#menu-toggle").click(function(e) {
-              e.preventDefault();
-              $("#wrapper").toggleClass("toggled");
+                $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                $(".fa-arrow-left").toggle();
+                });
+
+                $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                    event.preventDefault();
+                    $(this).ekkoLightbox({
+                        alwaysShowClose: true,
+                    });
+                });
+
             });
         </script>
+{{-- <script src="https://cdn.ckeditor.com/4.13.1/full/ckeditor.js"></script>
+<script>
+
+    CKEDITOR.replace('description', {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+    language: 'fr',
+    });
+    CKEDITOR.config.extraPlugins = 'resize';
+
+  </script> --}}
+  <script src="{{ asset('node_modules/tinymce5/js/tinymce/tinymce.min.js') }}"></script>
+
+  <script>
+    var editor_config = {
+        path_absolute : "/",
+        selector: "textarea",
+        plugins: [
+          "advlist autolink lists link image imagetools charmap print preview hr anchor pagebreak",
+          "searchreplace wordcount visualblocks visualchars code fullscreen",
+          "insertdatetime media nonbreaking save table contextmenu directionality",
+          "emoticons template paste textcolor colorpicker textpattern visualblocks"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+        relative_urls: false,
+        file_picker_callback: function (callback, value, meta) {
+        let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+        let y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+        let type = 'image' === meta.filetype ? 'Images' : 'Files',
+            url  = editor_config.path_absolute + 'laravel-filemanager?editor=tinymce5&type=' + type;
+
+        tinymce.activeEditor.windowManager.openUrl({
+            url : url,
+            title : 'Filemanager',
+            width : x * 0.8,
+            height : y * 0.8,
+            onMessage: (api, message) => {
+                callback(message.content);
+            }
+        });
+    },
+
+
+
+
+
+      };
+
+      tinymce.init(editor_config);
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+
 </body>
 </html>

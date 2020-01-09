@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="css/correstyle.css">
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Document</title>
+    <title>D'une terre à l'autre Corresmonde </title>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDOFiQ2FjQlGdyihZp4FV_cLqGAQWgISfk" type="text/javascript"></script>
-    <style type="text/css">
-        #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-            height:600px;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -32,22 +27,21 @@
                       <a class="nav-link" href="/projet">Le projet</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/deroule">Déroulé du projet </a>
+                      <a class="nav-link" href="#">Déroulé du projet </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/ressources">Espace docs</a>
-                    </li>
-
+                   
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="ressources" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Travaux d'élèves
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/ressources">Travaux des collégiens</a>
-                        <a class="dropdown-item" href="/map">Travaux de la MAST</a>
+                        <a class="dropdown-item" href="/ressources">Parcours</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Portfolio des rencontres? </a>
                       </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-center"  href="/periples">Périples<br> <span style="text-transform: lowercase;">(exposition de la MAST)</span></a>
                     </li>
                 </ul>
 
@@ -55,7 +49,7 @@
                             @if (Route::has('login'))
                                         @auth
                                         <li>
-                                        <a class="nav-link text-warning" href="/admin">Espace d'administration </a>
+                                        <a class="nav-link text-success" href="/admin">Espace d'administration </a>
                                         </li>
 
                                         <li>
@@ -89,7 +83,7 @@
 
 
 
-        <div class="content">
+        <div class="container-fluid">
                 @yield('content')
         </div>
 
@@ -103,6 +97,7 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous">
     </script>
+    <script src="js/map.js"></script>
 
 
 </body>

@@ -1,6 +1,17 @@
 @extends('layouts.app')
-
 @section('content')
+
+
+<style>
+.card-header{
+text-transform:capitalize;
+}
+.newUser{
+    justify-content: space-around
+}
+</style>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -17,12 +28,12 @@
                     @endif
 
 
-                    <h1 class="text-success">Vous êtes connecté</h1>
+                    <h1 class="text-success">Vous êtes connecté </h1>
                 </div>
             </div>
             <br>
 
-            <div class="row" style="justify-content: space-around">
+            <div class="row newUser">
                 <div>
                     <h3>Enregistrer un nouvel administrateur :</h3>
                 </div>
