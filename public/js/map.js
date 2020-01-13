@@ -130,9 +130,9 @@
         google.maps.event.addListener(marker8, 'click', function() {
         infowindow8.open(map, marker8);
         });
-// Navidullah 
+// Navidullah
         var marker9 = new google.maps.Marker();
-        marker9.setPosition(new google.maps.LatLng(33.927125,67.721655 ));
+        marker9.setPosition(new google.maps.LatLng( 33.927125,67.721655 ));
         marker9.setIcon('https://img.icons8.com/color/24/000000/rucksack.png');
         marker9.setTitle("SYRIE");
         marker9.setMap(map);
@@ -144,8 +144,53 @@
         infowindow9.open(map, marker9);
         });
 
+
+
+
     }
 
     window.onload = function(){
         initMap();
     };
+
+
+// Global Variables
+const countriesList = document.getElementById("countries");
+let countries; // will contain "fetched" data
+
+// Event Listeners
+// countriesList.addEventListener("change", event => displayCountryInfo(event.target.value));
+
+countriesList.addEventListener("change", newCountrySelection);
+
+function newCountrySelection(event) {
+  displayCountryInfo(event.target.value);
+}
+
+
+fetch("js/restcountries.json")
+.then(res => res.json())
+.then(data => initialize(data))
+.catch(err => console.log("Error:", err));
+
+function initialize(countriesData) {
+  countries = countriesData;
+  let options = "";
+
+  countries.forEach(country => options+=`<option value="${country.alpha3Code}">${country.name}</option>`);
+
+  countriesList.innerHTML = options;
+
+  displayCountryInfo(countriesList[countriesList.selectedIndex].value);
+}
+
+function displayCountryInfo(countryByAlpha3Code) {
+  const countryData = countries.find(country => country.alpha3Code === countryByAlpha3Code);
+  document.querySelector("#flag-container img").src = countryData.flag;
+  document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`;
+  document.getElementById("capital").innerHTML = countryData.capital;
+//   document.getElementById("dialing-code").innerHTML = `+${countryData.callingCodes[0]}`;
+  document.getElementById("population").innerHTML = countryData.population.toLocaleString("fr-FR")+" habitants";
+  document.getElementById("region").innerHTML = countryData.region;
+  document.getElementById("languages").innerHTML = `${countryData.languages[0]["name"]}`;
+}

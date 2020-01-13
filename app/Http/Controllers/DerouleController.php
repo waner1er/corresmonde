@@ -44,8 +44,8 @@ class DerouleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'deroueTitle' => 'required',
-            'deroueContent' => 'required',
+            'derouleTitle' => 'required',
+            'derouleContent' => 'required',
         ]);
 
         Deroule::create($request->all());

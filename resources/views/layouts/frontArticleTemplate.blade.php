@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/sandstone.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/correstyle.css">
 
 
@@ -13,6 +13,12 @@
 
 </head>
 <style>
+    @media (max-width: 420px){
+    .container img{
+        height: auto;
+    width: 100%;
+      }
+  }
 </style>
 
 <body>
@@ -32,7 +38,7 @@
                       <a class="nav-link" href="{{ url('/deroule') }}">Déroulé du projet </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Comprendre les migrations </a>
+                      <a class="nav-link" href="understanding">Comprendre les migrations </a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -98,7 +104,7 @@
 
 
 
-        <div class="container ">
+        <div class="container-fluid ">
                 @yield('content')
         </div>
 

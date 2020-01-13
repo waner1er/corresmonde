@@ -10,10 +10,10 @@ use PDF;
 class ProductController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -32,9 +32,10 @@ class ProductController extends Controller
         $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
 
 
-        return view('frontend.ressources',$data);
+        return view('product.publicIndex',$data);
 
     }
+
 
 
     /**

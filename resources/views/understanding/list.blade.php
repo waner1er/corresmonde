@@ -4,6 +4,7 @@
   <br>
    <div class="row">
         <div class="col-12">
+            <a href="{{ route('understandings.create') }}" class="btn btn-success mb-2">Ajouter</a>
 
 
               @foreach($understandings as $understanding)
@@ -21,10 +22,10 @@
                  {{-- <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div> --}}
 
               @endforeach
-              {{-- <div style="margin:15px;"><a href="{{ route('understandings.edit',$understanding->id)}}" class="btn btn-success">Modifier</a></div> --}}
+              <div style="margin:15px;"><a href="{{ route('understandings.edit',$understanding->id)}}" class="btn btn-success">Modifier</a></div>
 
 
-          {{-- {!! $understandings->links() !!} --}}
+          {!! $understandings->links() !!}
        </div>
    </div>
  @endsection

@@ -18,7 +18,7 @@ class PublicProductController extends Controller
         $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
 
 
-        return view('frontend.ressources',$data);
+        return view('product.publicIndex',$data);
     }
 
 
@@ -67,7 +67,7 @@ class PublicProductController extends Controller
         $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
 
 
-        return view('frontend.articleRessources', $data);
+        return view('product.articlePublicProduct', $data);
     }
 
     /**

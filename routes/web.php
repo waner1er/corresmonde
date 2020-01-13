@@ -17,16 +17,12 @@ Route::get('/', 'WelcomeController@accueil');
 // Route::get('/', ['as' => 'index', 'uses' => 'WelcomeController@accueil']);
 
 
-Route::resource('ressources', 'PublicProductController');
+// Route::get('ressources', 'ProductController@publicIndex');
 Route::resource('projet', 'PublicProjectController');
 Route::resource('deroule', 'PublicDerouleController');
-Route::get('/periples', function () {
-        return view('frontend.periples');
-    });
+Route::resource('ressources', 'PublicProductController');
+Route::resource('understanding', 'PublicUnderstandingController');
 
-Route::get('/periples', function () {
-        return view('frontend/periples');
-    });
 
 
 // ADMIN
@@ -34,6 +30,9 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::resource('products', 'ProductController');
 Route::resource('projects', 'ProjectController');
 Route::resource('deroules', 'DerouleController');
+Route::resource('understandings', 'UnderstandingMigrationsController');
+Route::resource('periples', 'PeriplesController');
 
 Auth::routes();
+
 

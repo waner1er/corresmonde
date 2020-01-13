@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.appArticle')
 
 @section('content')
 <link rel="stylesheet" href="../../css/sandstone.css">
 <link rel="stylesheet" href="../../css/adminCss.css">
-   
+
 <h2  class="text-center Subtitle">Modifier <br><em class="text-primary">{{ $product_info->title }}</em></a></h2>
 <a href="/products">Retour</a>
 
@@ -32,7 +32,7 @@
     <div class="col-lg-12">
         <div class="form-group">
             <strong>Contenu</strong>
-            <textarea style="height:550px;" class="form-control description" name="description" col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
+            <textarea style="height:550px;"id="my_toolbar"class="form-control description" col="4" name="description" placeholder="Enter Description" >{{ $product_info->description }}</textarea>
             <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
     </div>

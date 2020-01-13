@@ -1,4 +1,4 @@
-@extends('layouts.edit')
+@extends('layouts.appArticle')
 
 @section('content')
 <h2 style="margin-top: 12px;" class="text-center">Add understanding</a></h2>

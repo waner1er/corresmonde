@@ -15,12 +15,12 @@
       <div class="col-8 titre">
               <h1 class="">D'une terre à l'autre : Corresmonde</h1>
 
-              <p class="lead">une phrase d'accroche qui explique rapidement le projet </p>
+              <p class="lead">Un projet de correspondance entre des collégiens et des jeunes migrants </p>
               <hr class="my-4">
 
 
 
-              <blockquote class="font-italic">"Une citation ou une phrase choc "</blockquote>
+              <blockquote class="font-italic">"La vie ou la mort pour trouver du bonheur"</blockquote>
 
               <p class="lead">
               <a class="btn btn-primary btn-lg" href="/projet" role="button">Le projet</a>
