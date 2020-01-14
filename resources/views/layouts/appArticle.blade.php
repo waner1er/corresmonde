@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="sidebar-heading text-success">
-                    <a href="{{ url('rencontres')}}" class="list-group-item list-group-item-action bg-light">Portfolio des rencontres</a>
+                    <a href="{{ url('rencontres')}}" class="list-group-item list-group-item-action bg-light">Portfolio</a>
                     </div>
                 </div>
                 <!-- /#sidebar-wrapper -->

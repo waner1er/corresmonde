@@ -61,7 +61,7 @@
                       </div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ url('rencontre') }}">Portfolio des rencontres?</a>
+                    <a class="nav-link" href="{{ url('rencontre') }}">Portfolio </a>
                     </li>
                 </ul>
 

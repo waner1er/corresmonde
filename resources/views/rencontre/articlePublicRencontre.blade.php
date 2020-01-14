@@ -23,7 +23,7 @@
 
 }
 </style>
-
+<link rel="stylesheet" href="../../css/lightbox.css">
 
     <div class="jumbotron jumbotron-fluid welcome">
         <div class="container">
@@ -45,12 +45,10 @@
 
                 {!! $rencontre_info->rencontreContent !!}
             </div>
-            <div class="col-lg-2 text-center mt-5">
-
-
-            </div>
         </div>
-    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../js/lightbox.js"></script>
 
 
 @endsection
