@@ -19,10 +19,9 @@
                     </div>
                 </div>
                  <td></td>
-                 {{-- <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div> --}}
+                 <div style="margin:15px;"><a href="{{ route('understandings.edit',$understanding->id)}}" class="btn btn-success">Modifier</a></div>
 
               @endforeach
-              <div style="margin:15px;"><a href="{{ route('understandings.edit',$understanding->id)}}" class="btn btn-success">Modifier</a></div>
 
 
           {!! $understandings->links() !!}

@@ -13,15 +13,21 @@
   .welcome h1 {color:#fff;font-weight: 600;text-shadow:2px 2px 2px #000;font-size: 2rem;text-transform: capitalize;}
 
 }
+
 </style>
-@foreach($understandings as $understanding)
 <div class="jumbotron jumbotron-fluid welcome">
-  <div class="container">
-    <h1 class="display-4 ">{{ $understanding->understandingTitle }}</h1>
-  </div>
+    <div class="container">
+      <h1 class="display-4 ">Comprendre les migrations</h1>
+    </div>
 </div>
 
+@foreach($understandings as $understanding)
+
+
   <div class="card">
+    <a class="rightMenuTitle" href="{{ route('understanding.edit',$understanding->id)}}">
+
+      <h2 class="text-center">{!! $understanding->understandingTitle  !!}</h2></a>
        {!! $understanding->understandingContent  !!}
   </div>
             @endforeach

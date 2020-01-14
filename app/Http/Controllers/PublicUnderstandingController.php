@@ -21,4 +21,13 @@ class PublicUnderstandingController extends Controller
 
         return view('understanding.publicIndex',$data);
     }
+    public function edit($id)
+    {
+        $where = array('id' => $id);
+        $data['understanding_info'] = UnderstandingMigrations::where($where)->first();
+        $data['understandings'] = UnderstandingMigrations::orderBy('id','asc')->paginate(10);
+
+
+        return view('understanding.articleEdit', $data);
+    }
 }

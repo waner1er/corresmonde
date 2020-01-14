@@ -12,7 +12,7 @@ class UnderstandingMigrationsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest');
     }
     /**
      * Display a listing of the resource.
@@ -52,7 +52,7 @@ class UnderstandingMigrationsController extends Controller
 
         UnderstandingMigrations::create($request->all());
 
-        // return Redirect::to('understandings')->with('success','Greate! understanding created successfully.');
+        return Redirect::to('understandings')->with('success','Greate! understanding created successfully.');
     }
 
     /**

@@ -6,10 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.css">
 
-
     <title>D'une terre à l'autre Corresmonde </title>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDOFiQ2FjQlGdyihZp4FV_cLqGAQWgISfk" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
 
 
 
@@ -17,6 +15,17 @@
 
 <body>
 <style>
+
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    }
+    @media (max-width: 768px){
+        .container table {
+            display: none;
+        }
+
+    }
 
 </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,13 +37,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href=" {{ url('/projet') }}">Le projet</a>
+                      <a class="nav-link" href=" {{ url('projet') }}">Le projet</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ url('/deroule') }}">Déroulé du projet </a>
+                      <a class="nav-link" href="{{ url('deroule') }}">Déroulé du projet </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Comprendre les migrations </a>
+                      <a class="nav-link" href="{{ url('understanding') }}">Comprendre les migrations </a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -44,7 +53,8 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ url('/ressources') }}">Parcours</a>
                         <div class="dropdown-divider"></div>
-                        <a href="#"class="dropdown-item">Anthologies</a>
+                        <a class="dropdown-item" href="{{ url('/source') }}">Source des travaux d'élèves</a>
+
                       </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -52,12 +62,12 @@
                         La MAST
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('/periples') }}">Périples (Exposition 2019)</a>
+                        <a class="dropdown-item" href="{{ url('/periple') }}">Périples (Exposition 2019)</a>
 
                       </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Portfolio des rencontres?</a>
+                      <a class="nav-link" href="{{ url ('rencontre') }} ">Portfolio des rencontres?</a>
                     </li>
                 </ul>
 
@@ -104,7 +114,6 @@
                 @yield('content')
         </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 
 
     <script  src="https://code.jquery.com/jquery-3.4.1.js"

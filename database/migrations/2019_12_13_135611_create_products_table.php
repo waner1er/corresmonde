@@ -16,7 +16,7 @@
       {
           Schema::create('products', function (Blueprint $table) {
               $table->increments('id');
-              $table->int('numArticle');
+              $table->integer('numArticle');
               $table->string('title');
               $table->text('description');
               $table->timestamps();

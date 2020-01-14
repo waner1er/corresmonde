@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/LOGO.png" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/adminCss.css">
@@ -15,6 +17,14 @@
 </head>
 
 <body>
+    <style>
+.textEdit img,.textEdit p img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    }
+
+</style>
 @guest
 <div class="d-flex" id="wrapper">
 
@@ -23,10 +33,10 @@
         <a href="/admin"class="sidebar-heading text-success btn">Tableau de bord</a>
 
         <div class="sidebar-heading text-success"><strong><u>Espace élèves</u></strong>
-            <div class="sidebar-heading text-success">Travaux
-                <a href="#" class="list-group-item list-group-item-action bg-light">Sources des travaux d'élèves</a>
-                <a href="/products" class="list-group-item list-group-item-action bg-light">Parcours</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Anthologies</a>
+            <div class="sidebar-heading text-success">
+                <a href="{{ url ('sources') }} " class="list-group-item list-group-item-action bg-light">Sources des travaux d'élèves</a>
+                <a href="{{ url ('products') }} " class="list-group-item list-group-item-action bg-light">Parcours</a>
+                <a href="{{ url ('understandings') }} " class="list-group-item list-group-item-action bg-light">comprendre les migrations</a>
             </div>
         </div>
 
@@ -38,30 +48,29 @@
 
                 <!-- Sidebar -->
                 <div class="bg-light border-right" id="sidebar-wrapper">
-                    <a href="/admin"class="sidebar-heading text-success btn">Tableau de bord</a>
+                    <a href="{{ url ('admin') }}"class="sidebar-heading text-success btn">Tableau de bord</a>
 
                     <div class="sidebar-heading text-success">Objectifs
-                        <a href="/projects" class="list-group-item list-group-item-action bg-light">Objectifs du projet</a>
-                        <a href="/deroules" class="list-group-item list-group-item-action bg-light">Déroulé du projet</a>
+                        <a href="{{ url ('projects') }}" class="list-group-item list-group-item-action bg-light">Objectifs du projet</a>
+                        <a href="{{ url ('deroules') }} " class="list-group-item list-group-item-action bg-light">Déroulé du projet</a>
                     </div>
 
                     <div class="sidebar-heading text-success">
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Comprendre les migrations</a>
+                    <a href="{{ url ('understandings')}}" class="list-group-item list-group-item-action bg-light">Comprendre les migrations</a>
                     </div>
 
                     <div class="sidebar-heading text-success"><strong><u>Travaux des élèves</u></strong>
                         <div class="sidebar-heading text-success">Collégiens
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Sources des travaux d'élèves</a>
-                            <a href="/products" class="list-group-item list-group-item-action bg-light">Parcours</a>
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Anthologies</a>
+                            <a href="{{ url ('sources') }} " class="list-group-item list-group-item-action bg-light">Sources des travaux d'élèves</a>
+                            <a href="{{ url ('products') }}" class="list-group-item list-group-item-action bg-light">Parcours</a>
                         </div>
                         <div class="sidebar-heading text-success">MAST
-                            <a href="#" class="list-group-item list-group-item-action bg-light">Périples</a>
+                            <a href="{{ url('periples') }}" class="list-group-item list-group-item-action bg-light">Périples</a>
                         </div>
                     </div>
 
                     <div class="sidebar-heading text-success">
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Portfolio des rencontres</a>
+                    <a href="{{ url('rencontres')}}" class="list-group-item list-group-item-action bg-light">Portfolio des rencontres</a>
                     </div>
                 </div>
                 <!-- /#sidebar-wrapper -->

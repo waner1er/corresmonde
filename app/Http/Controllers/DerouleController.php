@@ -49,6 +49,8 @@ class DerouleController extends Controller
         ]);
 
         Deroule::create($request->all());
+        return Redirect::to('deroules')->with('success');
+
     }
 
     /**
@@ -59,7 +61,7 @@ class DerouleController extends Controller
      */
     public function show(Request $request)
     {
-
+        //
     }
 
     /**

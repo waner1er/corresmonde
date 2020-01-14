@@ -2,36 +2,58 @@
 
 @section('content')
 <style>
-.info-container select,.info-container p{
-    width:100%;
-}
+    .welcome{text-align: center;background: transparent;background:rgba(255,255,255,0.8);border:1px solid #20B2AA;border-radius: 555px 25px 15px 25px/25px 5px 35px 555px;padding:0;}
+    .jumbotron h1 {color:#20B2AA;font-weight: 600;text-shadow:2px 2px 2px #000;font-size: 3.5rem;text-transform: capitalize;}
+    .jumbotron .lead {color:#000;font-weight: 500;}
+    .container{padding: 0;}
+    .info-container select,.info-container p{
+    width:100%;}
+    #map{height:500px;}
+
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css"><style>
-#map{height:500px;}
-</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
 <h1>Parcours </h1>
 <div class="row ">
 
 
     <div class="col-lg-6 overflow-auto">
-        <h2 class="text-primary rightMenuTitle">travaux des élèves</h2>
+        <div class="jumbotron jumbotron-fluid welcome">
+            <div class="container">
+              <h1 class="">Parcours</h1>
+            </div>
+          </div>
         @foreach($products as $product)
+
         <div class="card ">
             <a class="rightMenuTitle" href="{{ route('ressources.edit',$product->id)}}">
                 <div>{{ $product->title }}</div>
             </a>
-<div style="font-size:0.7em;"class="lead">{{  date('d/m/Y, à H', strtotime($product->created_at))  }} h {{date('i', strtotime($product->created_at))}}
-</div>
-            <div>{!! Str::limit(strip_tags($product->description))!!}</div>
+        <div style="font-size:0.7em;"class="lead">{{  date('d/m/Y, à H', strtotime($product->created_at))  }} h {{date('i', strtotime($product->created_at))}}
         </div>
-    @endforeach
+        <div>{!! Str::limit(strip_tags($product->description))!!}</div>
+        </div>
+        @endforeach
     </div>
-    <div class="col-lg-6 border">
-        <div id="map">
+    <div class="col-lg-6">
+        <div class="jumbotron jumbotron-fluid welcome">
+            <div class="container">
+              <h1 class="">Cartographie des parcours</h1>
+            </div>
+        </div>
+
+        <div class=" border ">
+            <div id="map"></div>
+        </div>
     </div>
-    </div>
+
 </div>
 <div class="row my-5 border">
+    <div class="jumbotron jumbotron-fluid welcome col-lg-12">
+        <div class="container">
+          <h1 class="">Informations principales des pays du monde</h1>
+        </div>
+    </div>
     <div class="col-lg-4 p-4">
         <div id="main-container">
           <div class="text-center" id="flag-container">

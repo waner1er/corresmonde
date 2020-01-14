@@ -13,18 +13,18 @@
 
 </head>
 <style>
-    @media (max-width: 420px){
-    .container img{
-        height: auto;
+    .container img,.container p img {
     width: 100%;
-      }
-  }
+    max-width: 600px;
+    height: auto;
+    }
+
 </style>
 
 <body>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href=" {{ url('/') }} "><img src="../img/LOGO.png" width="100"alt=""></a>
+        <a class="navbar-brand" href=" {{ url('/') }} "><img src="../../img/LOGO.png" width="100"alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,7 +38,7 @@
                       <a class="nav-link" href="{{ url('/deroule') }}">Déroulé du projet </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="understanding">Comprendre les migrations </a>
+                      <a class="nav-link" href="{{ url('/understanding') }}">Comprendre les migrations </a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -48,20 +48,20 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ url('/ressources') }}">Parcours</a>
                         <div class="dropdown-divider"></div>
-                        <a href="#"class="dropdown-item">Anthologies</a>
+                        <a class="dropdown-item" href="{{ url('/source') }}">Source des travaux d'élèves</a>
                       </div>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="ressources" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" href="{{ url('ressources') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         La MAST
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('/periples') }}">Périples (Exposition 2019)</a>
+                        <a class="dropdown-item" href="{{ url('/periple') }}">Périples (Exposition 2019)</a>
 
                       </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Portfolio des rencontres?</a>
+                    <a class="nav-link" href="{{ url('rencontre') }}">Portfolio des rencontres?</a>
                     </li>
                 </ul>
 

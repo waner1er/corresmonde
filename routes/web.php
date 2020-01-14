@@ -22,6 +22,9 @@ Route::resource('projet', 'PublicProjectController');
 Route::resource('deroule', 'PublicDerouleController');
 Route::resource('ressources', 'PublicProductController');
 Route::resource('understanding', 'PublicUnderstandingController');
+Route::resource('periple', 'PublicPeripleController');
+Route::resource('source', 'PublicSourceController');
+Route::resource('rencontre', 'PublicRencontreController');
 
 
 
@@ -31,7 +34,9 @@ Route::resource('products', 'ProductController');
 Route::resource('projects', 'ProjectController');
 Route::resource('deroules', 'DerouleController');
 Route::resource('understandings', 'UnderstandingMigrationsController');
-Route::resource('periples', 'PeriplesController');
+Route::resource('periples', 'PeripleController');
+Route::resource('rencontres', 'RencontreController');
+Route::resource('sources', 'SourceController');
 
 Auth::routes();
 

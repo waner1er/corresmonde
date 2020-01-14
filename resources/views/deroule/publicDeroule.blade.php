@@ -22,8 +22,7 @@
     </div>
   </div>
 <div class="row">
-
-    <div class="container">
+   <div class="container">
 
         @foreach($deroules as $deroule)
         <div class="row">

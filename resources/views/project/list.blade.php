@@ -1,18 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- <style>
+<style>
 
-.textEdit img,.textEdit p img {
-        height: 100%;
-    width: 100%;
-      }</style> --}}
+</style>
   <br>
    <div class="row">
         <div class="col-12">
 
-
-              @foreach($projects as $project)
+            <a href="{{ route('projects.create') }}" class="btn btn-success my-2">Ajouter</a>              @foreach($projects as $project)
                 <div class="card">
                     <div class="card-header text-success mb-2 ">
                         <h2>{{ $project->projectTitle }}</h2> <br>
@@ -24,9 +20,9 @@
                     </div>
                 </div>
 
+                <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div>
 
               @endforeach
-              <div style="margin:15px;"><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-success">Modifier</a></div>
 
 
           {!! $projects->links() !!}

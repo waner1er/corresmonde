@@ -21,7 +21,7 @@
 
        </div>
        <div class="col-lg-4">
-        <a class="btn btn-success"href="">Ecrire un nouveau déroulé</a>
+        <a class="btn btn-success"href="{{ route('deroules.create') }}">Ecrire un nouveau déroulé</a>
 
        </div>
    </div>
