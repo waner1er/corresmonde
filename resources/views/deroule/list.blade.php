@@ -4,7 +4,11 @@
   <br>
    <div class="row">
         <div class="col-lg-8">
-<style>.derouleSection{height:350px;overflow: scroll;}</style>
+<style>
+.derouleSection{height:350px;overflow: scroll;}
+.derouleSection div p img{max-width: 700px; width:100%}
+
+</style>
              @foreach($deroules as $deroule)
                 <div class="card derouleSection">
                     <div class="card-header">
