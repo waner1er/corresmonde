@@ -12,7 +12,7 @@
     .container h1{font-size:2.5rem;}
 }
 @media(max-width:316px){
-    .container h1{font-size:2rem;}
+    .container h1{font-size:1.5rem;}
 }
 </style>
 <div class="jumbotron jumbotron-fluid welcome">
@@ -24,7 +24,7 @@
 @foreach($understandings as $understanding)
 
 
-  <div class="card">
+  <div class="container border">
     <a class="rightMenuTitle" href="{{ route('understanding.edit',$understanding->id)}}">
 
       <h2 class="text-center">{!! $understanding->understandingTitle  !!}</h2></a>

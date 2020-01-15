@@ -13,8 +13,10 @@
     .container h1{font-size:2.5rem;}
 }
 @media(max-width:316px){
+
     .container h1{font-size:2rem;}
 }
+
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
@@ -62,7 +64,7 @@
     <div class="col-lg-4 p-4">
         <div id="main-container">
           <div class="text-center" id="flag-container">
-            <img width="300px"src="" alt="">
+            <img width="100%"src="" alt="">
           </div>
         </div>
     </div>

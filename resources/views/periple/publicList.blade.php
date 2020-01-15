@@ -16,6 +16,14 @@
     .container{padding: 0;}
     .container p img{max-width:700px; width:100%;}
     .container p{text-align: center;}
+    #map{height:500px;}
+    @media(max-width:439px){
+    .container h1{font-size:2.5rem;}
+}
+@media(max-width:316px){
+
+    .container h1{font-size:2rem;}
+}
 </style>
 
 <div class="row">
@@ -28,7 +36,7 @@
             </div>
         </div>
         @foreach($periples as $periple)
-        <div class="card ">
+        <div class="container border ">
             <a class="rightMenuTitle" href="{{ route('periple.edit',$periple->id)}}">
                 <div>{{ $periple->peripleTitle }}</div>
             </a>

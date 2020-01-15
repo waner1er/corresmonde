@@ -29,10 +29,10 @@
 
         @foreach($deroules as $deroule)
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-4 col-md-4 mx-auto">
                 <a class="rightMenuTitle" href="{{ route('deroule.edit',$deroule->id)}}"><div class="card border-success derouleSection">
                     <p>
-                        <h2 class="text-center">{{ $deroule->derouleTitle }}</h2>
+                        <h4 class="text-center">{{ $deroule->derouleTitle }}</h4>
                     </p>
                         {{-- {!! $deroule->derouleContent !!} --}}
 
