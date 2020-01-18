@@ -21,12 +21,10 @@
 
 <body>
     <style>
-.textEdit img,.textEdit p img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    }
-
+#tinymce p img, #tinymce blockquote img, #tinymce ul li img {
+    width: 80%;
+    max-width: 600px;
+}
 </style>
 @guest
 <div class="d-flex" id="wrapper">
@@ -37,9 +35,7 @@
 
         <div class="sidebar-heading text-success"><strong><u>Espace élèves</u></strong>
             <div class="sidebar-heading text-success">
-                <a href="{{ url ('sources') }}" class="list-group-item list-group-item-action bg-light">Sources des travaux d'élèves</a>
                 <a href="/products" class="list-group-item list-group-item-action bg-light">Parcours</a>
-                <a href="{{ url ('understandings') }} " class="list-group-item list-group-item-action bg-light">comprendre les migrations</a>
             </div>
         </div>
 
@@ -47,7 +43,7 @@
     </div>
 @else
 
-        <div class="d-flex" id="wrapper">
+        <div class="d-flex mb-5" id="wrapper">
 
                 <!-- Sidebar -->
                 <div class="bg-light border-right" id="sidebar-wrapper">
@@ -188,13 +184,14 @@ crossorigin="anonymous">
       path_absolute : "/",
       selector: "textarea",
       themes:"modern",
+      toolbar_sticky: true,
+
       plugins: [
         "advlist autolink autoresize lists link image imagetools charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",
         "insertdatetime media nonbreaking save table contextmenu directionality",
         "emoticons template paste textcolor colorpicker textpattern visualblocks"
       ],
-
 
       toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
       relative_urls: false,

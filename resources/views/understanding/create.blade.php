@@ -1,10 +1,8 @@
 @extends('layouts.appArticle')
 
 @section('content')
-<h2 style="margin-top: 12px;" class="text-center">Add understanding</a></h2>
-<br>
-
-<form action="{{ route('understandings.store') }}" method="POST" name="add_understanding">
+<h2 class="my-5 text-success text-center">Comprendre les migrations</h2>
+<form class="my-5"action="{{ route('understandings.store') }}" method="POST" name="add_understanding">
 {{ csrf_field() }}
 
 <div class="row">
@@ -25,7 +23,7 @@
         </div>
     </div>
     <div class="col-md-12">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
     </div>
 </div>
 

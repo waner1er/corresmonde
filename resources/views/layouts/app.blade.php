@@ -15,18 +15,12 @@
     <title>D'une terre à l'autre Corresmonde - Admin </title>
 
 </head>
-
 <body>
     <style>
-.textEdit img,.textEdit p img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    }
 
 </style>
 @guest
-<div class="d-flex" id="wrapper">
+<div class="d-flex mb-5" id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
@@ -34,9 +28,7 @@
 
         <div class="sidebar-heading text-success"><strong><u>Espace élèves</u></strong>
             <div class="sidebar-heading text-success">
-                <a href="{{ url ('sources') }} " class="list-group-item list-group-item-action bg-light">Sources des travaux d'élèves</a>
                 <a href="{{ url ('products') }} " class="list-group-item list-group-item-action bg-light">Parcours</a>
-                <a href="{{ url ('understandings') }} " class="list-group-item list-group-item-action bg-light">comprendre les migrations</a>
             </div>
         </div>
 
@@ -185,6 +177,8 @@ crossorigin="anonymous">
       path_absolute : "/",
       selector: "textarea",
       themes:"modern",
+      toolbar_sticky: true,
+
       plugins: [
         "advlist autolink autoresize lists link image imagetools charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",

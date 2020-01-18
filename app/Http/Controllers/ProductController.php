@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+        $data['products'] = Product::orderBy('numArticle','asc')->paginate(4);
 
 
         return view('product.list',$data);
@@ -29,7 +29,7 @@ class ProductController extends Controller
     }
     public function publicIndex()
     {
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+        $data['products'] = Product::orderBy('numArticle','asc')->paginate(5);
 
 
         return view('product.publicIndex',$data);

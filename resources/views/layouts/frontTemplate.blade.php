@@ -15,18 +15,9 @@
 
 <body>
 <style>
-
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    }
-    @media (max-width: 768px){
-        .container table {
-            display: none;
-        }
-
-    }
-
+    .container{padding: 0;    overflow: hidden;}
+    .container p img,{max-width: 900px;width: 60%;height: auto;margin: 1rem;}
+    .footer {position: absolute;bottom: 0;width: 100%;height: 60px;background: #000000;color: #FFFFFF;}
 </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href=" {{ url('/') }} "><img src="img/LOGO.png" width="100"alt=""></a>
@@ -110,11 +101,13 @@
 
 
 
-        <div class="container-fluid ">
+        <div class="container p-4 ">
                 @yield('content')
         </div>
 
-
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="http://myportfolio.riveterwan.ovh"> Erwan RIVET</a>
+          </div>
 
     <script  src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -125,7 +118,18 @@
             crossorigin="anonymous">
     </script>
     <script src="js/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 
+
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+    </script>
+    <script>
+
+    </script>
 
 </body>
 </html>

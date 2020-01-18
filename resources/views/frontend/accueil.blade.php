@@ -17,7 +17,7 @@
 
   }
   @media(max-width:520px){
-    .welcome{height:25vh;}
+    .welcome{height:37vh;}
 
       blockquote{display: none;}
       .welcome p{display:none;}
@@ -35,7 +35,7 @@
 
 
 
-              <blockquote class="font-italic">"La vie ou la mort pour trouver du bonheur"</blockquote>
+              <blockquote class="font-italic">"Voyageur, il n'y a pas de chemin, le chemin se fait en marchant ..."</blockquote>
 
               <p class="lead">
               <a class="btn btn-primary btn-lg" href="/projet" role="button">Le projet</a>

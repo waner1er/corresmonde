@@ -11,7 +11,7 @@ class PublicPeripleController extends Controller
 {
     public function index()
     {
-        $data['periples'] = Periple::orderBy('peripleTitle','asc')->paginate(10);
+        $data['periples'] = Periple::orderBy('peripleTitle','asc')->paginate(1);
 
         return view('periple.publicList',$data);
     }
@@ -22,7 +22,7 @@ class PublicPeripleController extends Controller
         $data['periples'] = Periple::orderBy('id','asc')->paginate(10);
 
 
-        return view('periple.articleperiple', $data);
+        return view('periple.articlePeriple', $data);
     }
 
 }

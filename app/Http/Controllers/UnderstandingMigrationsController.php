@@ -18,7 +18,7 @@ class UnderstandingMigrationsController extends Controller
      */
     public function index()
     {
-        $data['understandings'] = UnderstandingMigrations::orderBy('understandingTitle','asc')->paginate(10);
+        $data['understandings'] = UnderstandingMigrations::orderBy('understandingTitle','asc')->paginate(1);
 
         return view('understanding.list',$data);
     }

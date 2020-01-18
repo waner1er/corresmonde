@@ -1,28 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-  <br>
-   <div class="row">
-        <div class="col-lg-8">
-<style>.sourceSection{height:350px;overflow: scroll;}</style>
+<style>
+.sourceSection{height:350px;}
+.contentSource{overflow: scroll;}
+.sourceSection div p img{
+    width: 80%;
+    max-width: 600px;
+}
+</style>
+
+<h2 class="mt-5 mb-2 text-center text-success">Source des travaux d'élèves</h2>
+<div class="row">
+        <div class="col-lg-12">
+<a class="btn btn-success my-3"href="{{ route('sources.create') }}">+</a>
+
              @foreach($sources as $source)
-                <div class="card sourceSection">
-                    <div class="card-header">
+                <div class="card sourceSection mt-3 mb-2">
+                    <div class="card-header ">
                         <a href="{{ route('sources.edit',$source->id)}}"><h2>{{ $source->sourceTitle }}</h2></a> <br>
 
                     </div>
-                    <div >
+                    <div class="contentSource" >
                         {!! $source->sourceContent  !!}
                     </div>
                 </div>
-                 <div class='card'><a href="{{ route('sources.edit',$source->id)}}" class="btn btn-success col-lg-2 col-md-4 col-sm-4 col-xs-4">Modifier</a></div>
-
+                <div class="text-center">
+                 <a href="{{ route('sources.edit',$source->id)}}" class="btn btn-primary  col-lg-2 col-md-4 col-sm-4 col-xs-4 mb-5">Modifier</a>
+                </div>
               @endforeach
+              {!! $sources->links() !!}
 
-       </div>
-       <div class="col-lg-4">
-        <a class="btn btn-success"href="{{ route('sources.create') }}">Ecrire un nouveau déroulé</a>
 
-       </div>
    </div>
  @endsection

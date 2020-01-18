@@ -2,7 +2,7 @@
 @section('content')
 
 
-{{-- <style>
+<style>
 .card-header{
 text-transform:capitalize;
 }
@@ -50,5 +50,5 @@ text-transform:capitalize;
         </div>
 
     </div>
-</div> --}}
+</div>
 @endsection

@@ -38,6 +38,5 @@ Route::resource('periples', 'PeripleController');
 Route::resource('rencontres', 'RencontreController');
 Route::resource('sources', 'SourceController');
 
+
 Auth::routes();
-
-

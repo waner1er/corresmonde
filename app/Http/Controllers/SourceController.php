@@ -16,7 +16,7 @@ class SourceController extends Controller
      */
     public function index()
     {
-        $data['sources'] = Source::orderBy('sourceTitle','asc')->paginate(10);
+        $data['sources'] = Source::orderBy('sourceTitle','asc')->paginate(2);
 
         return view('source.list',$data);
     }

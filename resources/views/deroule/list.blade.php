@@ -1,31 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-  <br>
-   <div class="row">
-        <div class="col-lg-8">
 <style>
-.derouleSection{height:350px;overflow: scroll;}
-.derouleSection div p img{max-width: 700px; width:100%}
+    .derouleSection{height:350px;overflow: scroll;}
+    .derouleSection div p img{max-width: 700px; width:100%}
 
-</style>
+    </style>
+
+<a class="btn btn-success mx-auto my-3"href="{{ route('deroules.create') }}">+</a>
+<div class="row">
+        <div class="col-lg-12">
+
              @foreach($deroules as $deroule)
-                <div class="card derouleSection">
-                    <div class="card-header">
+             <div class='card '>
+                    <div class="card-header text-center">
                         <a href="{{ route('deroules.edit',$deroule->id)}}"><h2>{{ $deroule->derouleTitle }}</h2></a> <br>
+                    </div>
 
-                    </div>
-                    <div >
-                        {!! $deroule->derouleContent  !!}
-                    </div>
                 </div>
-                 <div class='card'><a href="{{ route('deroules.edit',$deroule->id)}}" class="btn btn-success col-lg-2 col-md-4 col-sm-4 col-xs-4">Modifier</a></div>
+                <div class="text-center">
+                    <a href="{{ route('deroules.edit',$deroule->id)}}" class="btn btn-primary mt-2 mb-5 col-lg-2 col-md-4 col-sm-4 col-xs-4">Modifier</a>
+                </div>
 
               @endforeach
 
        </div>
-       <div class="col-lg-4">
-        <a class="btn btn-success"href="{{ route('deroules.create') }}">Ecrire un nouveau déroulé</a>
+       <div class="col-lg-4 text-center">
 
        </div>
    </div>
