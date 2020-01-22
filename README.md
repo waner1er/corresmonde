@@ -8,5 +8,5 @@
 </p>
 
 
-<h1> Projet 5 de mon parcours webDévellopeur sur Openclassrooms </h1>
+<h1 class="text-center"> Projet 5 de mon parcours webDévellopeur sur Openclassrooms </h1>
 
