@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 
@@ -22,20 +22,22 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row mx-5">
    <div class="container">
 
         @foreach($deroules as $deroule)
         <div class="row">
-            <div class="col-lg-4 col-md-4 mx-auto">
-                <a class="rightMenuTitle" href="{{ route('deroule.edit',$deroule->id)}}"><div class="card border-success derouleSection my-3">
+            <div class=" mx-auto ">
+                <a class="rightMenuTitle " href="{{ route('deroule.edit',$deroule->id)}}">
+                    <div class=" border-success bg-light derouleSection mx-2 my-3">
                     <p>
                         <h4 class="text-center">{{ $deroule->derouleTitle }}</h4>
-                    <a href="{{ url('deroule') }}" data-toggle="lightbox">plouf</a>
+                    <a href="{{ url('deroule') }}" data-toggle="lightbox"></a>
                     </p>
-                        {{-- {!! $deroule->derouleContent !!} --}}
-
-                </div>
+                    <p class="px-4 py-2">
+                        {!!Str::limit(strip_tags ($deroule->derouleContent)) !!}
+                    </p>
+                    </div>
                 </a>
             </div>
 
@@ -47,10 +49,10 @@
 <div id="carouselExampleControls" class="carousel slide my-5 border-success col-lg-8 mx-auto" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="img/atelier_dessin/1.jpeg" alt="#">
+        <img class="d-block w-100" src="img/atelier_dessin/6.jpeg" alt="#">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="img/atelier_dessin/2.jpeg" alt="#">
+        <img class="d-block w-100" src="img/atelier_dessin/7.jpeg" alt="#">
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="img/atelier_dessin/3.jpeg" alt="#">

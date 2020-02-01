@@ -1,4 +1,4 @@
-@extends('layouts.frontArticleTemplate')
+@extends('layouts.front')
 
 @section('content')
 <link rel="stylesheet" href="../../css/sandstone.css">
@@ -23,6 +23,7 @@
 
     .container h1{font-size:2rem;}
 }
+
 </style>
 <link rel="stylesheet" href="../../css/lightbox.css">
 
@@ -42,7 +43,7 @@
 
     <div class="row">
         <div class="container">
-            <div class="card col-lg-12">
+            <div class="card text-justify col-lg-12">
 
                 {!! $rencontre_info->rencontreContent !!}
             </div>

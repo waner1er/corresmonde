@@ -1,4 +1,4 @@
-@extends('layouts.appArticle')
+@extends('layouts.back')
 
 @section('content')
 <h2 class="my-5 text-success text-center">Comprendre les migrations</h2>

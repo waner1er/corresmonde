@@ -21,6 +21,8 @@
             }
         });
 
+
+
 // NANTES
         var marker1 = new google.maps.Marker();
         marker1.setPosition(new google.maps.LatLng(47.21,-1.55));
@@ -144,53 +146,8 @@
         infowindow9.open(map, marker9);
         });
 
-
-
-
     }
 
     window.onload = function(){
         initMap();
     };
-
-
-// Global Variables
-const countriesList = document.getElementById("countries");
-let countries; // will contain "fetched" data
-
-// Event Listeners
-// countriesList.addEventListener("change", event => displayCountryInfo(event.target.value));
-
-countriesList.addEventListener("change", newCountrySelection);
-
-function newCountrySelection(event) {
-  displayCountryInfo(event.target.value);
-}
-
-
-fetch("js/restcountries.json")
-.then(res => res.json())
-.then(data => initialize(data))
-.catch(err => console.log("Error:", err));
-
-function initialize(countriesData) {
-  countries = countriesData;
-  let options = "";
-
-  countries.forEach(country => options+=`<option value="${country.alpha3Code}">${country.name}</option>`);
-
-  countriesList.innerHTML = options;
-
-  displayCountryInfo(countriesList[countriesList.selectedIndex].value);
-}
-
-function displayCountryInfo(countryByAlpha3Code) {
-  const countryData = countries.find(country => country.alpha3Code === countryByAlpha3Code);
-  document.querySelector("#flag-container img").src = countryData.flag;
-  document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`;
-  document.getElementById("capital").innerHTML = countryData.capital;
-//   document.getElementById("dialing-code").innerHTML = `+${countryData.callingCodes[0]}`;
-  document.getElementById("population").innerHTML = countryData.population.toLocaleString("fr-FR")+" habitants";
-  document.getElementById("region").innerHTML = countryData.region;
-  document.getElementById("languages").innerHTML = `${countryData.languages[0]["name"]}`;
-}

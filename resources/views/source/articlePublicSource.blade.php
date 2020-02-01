@@ -1,4 +1,4 @@
-@extends('layouts.frontArticleTemplate')
+@extends('layouts.front')
 
 @section('content')
 <link rel="stylesheet" href="../../css/sandstone.css">
@@ -42,7 +42,7 @@
 
     <div class="row">
         <div class="container">
-            <div class="card col-lg-12">
+            <div class="card text-justify col-lg-12">
 
                 {!! $source_info->sourceContent !!}
             </div>

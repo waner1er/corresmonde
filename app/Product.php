@@ -10,5 +10,7 @@
     ];
 
 
-
+    public function illustrations() {
+        return $this->hasMany('App\Illustration');
+    }
  }

@@ -25,6 +25,16 @@ Route::resource('understanding', 'PublicUnderstandingController');
 Route::resource('periple', 'PublicPeripleController');
 Route::resource('source', 'PublicSourceController');
 Route::resource('rencontre', 'PublicRencontreController');
+Route::get('/maps', function(){
+    return view('product.map');
+});
+Route::get('/countries', function(){
+    return view('product.countries');
+});
+Route::get('foo', function () {
+    return 'Hello World';
+});
+
 
 
 
@@ -37,6 +47,10 @@ Route::resource('understandings', 'UnderstandingMigrationsController');
 Route::resource('periples', 'PeripleController');
 Route::resource('rencontres', 'RencontreController');
 Route::resource('sources', 'SourceController');
+Route::resource('illustrations', 'IllustrationsController');
 
 
+Route::resource ('illustration', 'IllustrationsController', [
+        'only' => ['create', 'store', 'destroy', 'update']
+    ]);
 Auth::routes();

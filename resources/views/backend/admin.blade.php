@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.back')
 @section('content')
 
 
@@ -33,9 +33,9 @@ text-transform:capitalize;
                     @else
         <h1 class="text-success text-center">Vous êtes connecté sur l'espace Administrateur</h1>
                 </div>
-            </div>
+    </div>
             <br>
-            <div class="row newUser">
+    <div class="row newUser">
                 <div>
                     <h3>Enregistrer un nouvel administrateur :</h3>
                 </div>
@@ -47,7 +47,7 @@ text-transform:capitalize;
             </div>
             @endguest
 
-        </div>
+</div>
 
     </div>
 </div>

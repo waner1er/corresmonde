@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.back')
 
 @section('content')
 <style>
@@ -12,7 +12,7 @@
         <div class="col-lg-12">
             <a href="{{ route('periples.create') }}" class="btn btn-success my-2">+</a>
 
-          <table class="table table-bordered" id="laravel_crud">
+          <table class="table table-bordered table-striped" id="laravel_crud">
            <thead>
               <tr>
                  <th>Titres</th>

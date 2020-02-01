@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 <style>
@@ -8,7 +8,7 @@
 
     #map{height:500px;}
     @media(min-width:992px){
-        .parcours{height: 837px;overflow: scroll;}
+        /* .parcours{height: 837px;overflow: scroll;} */
     }
     @media(max-width:439px){
     .container h1{font-size:2.5rem;}
@@ -21,86 +21,40 @@
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
-<div class="row">
 
 
-    <div class="col-lg-6 parcours">
+    <div class="col-lg-12 parcours">
         <div class="jumbotron jumbotron-fluid welcome">
             <div class="container">
               <h1 class="">Parcours</h1>
             </div>
           </div>
-        @foreach($products as $product)
-
-        <div class="card ">
-            <a class="rightMenuTitle" href="{{ route('ressources.edit',$product->id)}}">
-                <div>{{ $product->title }}</div>
-            </a>
-        <div style="font-size:0.7em;"class="lead">{{  date('d/m/Y', strtotime($product->created_at))  }}
-        </div>
-        <div>{!! Str::limit(strip_tags($product->description))!!}</div>
-        </div>
-        @endforeach
     </div>
-    <div class="col-lg-6">
-        <div class="jumbotron jumbotron-fluid welcome">
-            <div class="container">
-              <h1 class="">Cartographie des parcours</h1>
+
+    @foreach($products as $product)
+    <div class="row  border mx-2 my-5 bg-light">
+
+        <div class="col-lg-8 my-4 ">
+                <a class="rightMenuTitle" href="{{ route('ressources.edit',$product->id)}}">
+                    <h3>{{ $product->title }}</h3>
+                </a>
+                <div style="font-size:0.7em;"class="lead">{{  date('d/m/Y', strtotime($product->created_at))  }}
+                </div>
+                <div class="col-lg-12">{!! Str::limit(strip_tags($product->description))!!}</div>
+
+        </div>
+        <div class="col-lg-3 my-4">
+            <div class="col-lg-12 text-center">
+                {!! $product->illustrations  !!}
+                </div>
             </div>
         </div>
-
-        <div class=" border ">
-            <div id="map"></div>
-        </div>
     </div>
 
-</div>
-<div class="row my-5 border">
-    <div class="jumbotron jumbotron-fluid welcome col-lg-12">
-        <div class="container">
-          <h1 class="">Informations principales des pays du monde</h1>
-        </div>
-    </div>
-    <div class="col-lg-4 p-4">
-        <div id="main-container">
-          <div class="text-center" id="flag-container">
-            <img width="100%"src="" alt="">
-          </div>
-        </div>
-    </div>
+        @endforeach
 
-    <div class="col-lg-8 text-center p-2">
 
-        <table class="table table-striped">
-
-            <tbody>
-                <tbody>
-                    <select id="countries" class="custom-select"></select>
-
-                    <tr>
-                      <th scope="row">Capitale</th>
-                      <td id="capital"></td></td>
-
-                    </tr>
-                    <tr>
-                      <th scope="row">Population</th>
-                      <td id="population"></td>
-
-                    </tr>
-                    <tr>
-                      <th scope="row">Region</th>
-                      <td id="region"></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Langues</th>
-                      <td id="languages">Larry</td>
-                    </tr>
-
-            </tbody>
-          </table>
-    </div>
-</div>
-
+        {!! $products->links() !!}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.js"></script>
 

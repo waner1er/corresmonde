@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.back')
 
 @section('content')
 <style>
@@ -10,16 +10,18 @@
         <div class="col-lg-12">
             <a href="{{ route('products.create') }}" class="btn btn-success my-2">+</a>
 
-          <table class="col-lg-12 table table-bordered" id="laravel_crud">
+          <table class="col-lg-12 table table-bordered table-striped" id="laravel_crud">
            <thead>
               <tr>
+                  <th>N°</th>
                  <th>Titres</th>
-                 <td colspan="2">Action</td>
+                 <th colspan="2">Action</th>
               </tr>
            </thead>
            <tbody>
               @foreach($products as $product)
               <tr>
+                  <td>{{ $product->numArticle }}</td>
                  <td >
                     @guest
                     <h3 class="text-center">   {{ $product->title }}</h3>

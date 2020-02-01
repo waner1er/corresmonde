@@ -15,11 +15,14 @@
       public function up()
       {
           Schema::create('products', function (Blueprint $table) {
+              $table->engine = 'InnoDB';
               $table->increments('id');
-              $table->integer('numArticle');
-              $table->string('title');
-              $table->text('description');
+              $table->integer('numArticle')->nullable();
+              $table->string('title')->nullable();
+              $table->string('photo')->nullable();
+              $table->text('description')->nullable();
               $table->timestamps();
+
           });
       }
 

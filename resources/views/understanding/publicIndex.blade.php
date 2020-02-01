@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 <style>
@@ -26,7 +26,7 @@
 @foreach($understandings as $understanding)
 
 
-  <div class="container card mb-5 p-3">
+  <div class="container text-justify card mb-5 p-3">
     {{-- <a class="rightMenuTitle" href="{{ route('understanding.edit',$understanding->id)}}"> --}}
 
       {{-- <h2 class="text-center">{!! $understanding->understandingTitle  !!}</h2></a> --}}

@@ -1,4 +1,4 @@
-@extends('layouts.frontArticleTemplate')
+@extends('layouts.front')
 
 @section('content')
 

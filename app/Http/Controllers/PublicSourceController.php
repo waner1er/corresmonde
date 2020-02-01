@@ -19,7 +19,7 @@ class PublicSourceController extends Controller
     {
         $where = array('id' => $id);
         $data['source_info'] = Source::where($where)->first();
-        $data['sources'] = Source::orderBy('id','asc')->paginate(10);
+        $data['sources'] = Source::orderBy('id','asc')->paginate(50);
 
 
         return view('source.articlePublicSource', $data);

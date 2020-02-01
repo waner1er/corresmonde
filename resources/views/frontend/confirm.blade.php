@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 <br>

@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 
@@ -39,7 +39,7 @@
 
         @foreach($rencontres as $rencontre)
 
-        <div class="container card rencontreContent my-5">
+        <div class="container card rencontreContent bg-light my-5 p-2">
             <a class="rightMenuTitle" href="{{ route('rencontre.edit',$rencontre->id)}}">
                 <div>{{ $rencontre->rencontreTitle }}</div>
                 {{  date('d/m/Y, à H', strtotime($rencontre->created_at))  }} h {{date('i', strtotime($rencontre->created_at))}}

@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 
@@ -8,7 +8,6 @@
   .jumbotron h1 {color:#20B2AA;font-weight: 600;text-shadow:2px 2px 2px #000;font-size: 3.5rem;text-transform: capitalize;}
   .jumbotron .lead {color:#000;font-weight: 500;}
   @media(max-width:991px){
-      .welcome{height:55vh;}
       .titre{margin:0;}
   }
   @media(max-width:650px){
@@ -17,10 +16,7 @@
 
   }
   @media(max-width:520px){
-    .welcome{height:37vh;}
 
-      blockquote{display: none;}
-      .welcome p{display:none;}
 
   }
 </style>

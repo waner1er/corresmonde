@@ -1,4 +1,4 @@
-@extends('layouts.frontTemplate')
+@extends('layouts.front')
 
 @section('content')
 <style>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-    <div class="container">
+    <div class="container p-3 text-justify">
          {!! $project->projectContent  !!}
     </div>
               @endforeach

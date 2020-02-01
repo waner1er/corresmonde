@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Illustration;
 use Illuminate\Http\Request;
 use App\Product;
 use App\User;
@@ -15,7 +16,10 @@ class PublicProductController extends Controller
      */
     public function index()
     {
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+        // $data['products'] = Product::with(['illustrations'])->orderBy('numArticle','asc')->paginate(10);
+        $data['products'] = Product::with(['illustrations' => function($query) {
+            $query->orderBy('id','asc');
+        }])->orderBy('numArticle','asc')->paginate(10);
 
 
         return view('product.publicIndex',$data);
@@ -64,7 +68,9 @@ class PublicProductController extends Controller
     {
         $where = array('id' => $id);
         $data['product_info'] = Product::where($where)->first();
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+        $data['products'] = Product::orderBy('numArticle','asc')->paginate(3);
+        $data['illustrations'] = Illustration::orderBy('id','asc')->paginate(10);
+
 
 
         return view('product.articlePublicProduct', $data);
