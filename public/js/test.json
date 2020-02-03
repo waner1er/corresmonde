@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "nomPays":"France",
+        "capitale":"PARIS"
+    },
+    {
+        "id":2,
+        "nomPays":"Allemagne",
+        "capitale":"BERLIN"
+    },
+    {
+        "id":3,
+        "nomPays":"France",
+        "capitale":"PARIS"
+    },
+    {
+        "id":4,
+        "nomPays":"Allemagne",
+        "capitale":"BERLIN"
+    }
+]

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Illustration;
 use Illuminate\Http\Request;
 use Redirect;
 use PDF;
@@ -10,10 +11,7 @@ use PDF;
 class ProductController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +19,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+        $data['products'] = Product::with(['illustrations' => function($query) {
+            $query->orderBy('id','asc');
+        }])->orderBy('numArticle','asc')->paginate(10);
 
 
         return view('product.list',$data);
@@ -29,12 +29,14 @@ class ProductController extends Controller
     }
     public function publicIndex()
     {
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(10);
+        $data['products'] = Product::orderBy('numArticle','asc')->paginate(5);
+        $data['illustrations'] = Illustration::orderBy('id','asc')->paginate(10);
 
 
-        return view('frontend.ressources',$data);
+        return view('product.publicIndex',$data);
 
     }
+
 
 
     /**
@@ -88,6 +90,7 @@ class ProductController extends Controller
         $where = array('id' => $id);
         $data['product_info'] = Product::where($where)->first();
 
+
         return view('product.edit', $data);
     }
 
@@ -104,10 +107,12 @@ class ProductController extends Controller
             'title' => 'required',
             'numArticle'=>'required',
             'description' => 'required',
+            'photo',
         ]);
 
-        $update = ['title' => $request->title,'numArticle' =>$request->numArticle, 'description' => $request->description];
+        $update = ['title' => $request->title,'numArticle' =>$request->numArticle, 'description' => $request->description, 'photo' =>$request->illustration];
         Product::where('id',$id)->update($update);
+        // Illustration::where('id',$id)->update($update);
 
         return Redirect::to('products');
     }

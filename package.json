@@ -27,6 +27,7 @@
     "dependencies": {
         "@ckeditor/ckeditor5-build-decoupled-document": "^16.0.0",
         "lightbox2": "^2.11.1",
-        "tinymce": "^5.1.4"
+        "tinymce": "^5.1.4",
+        "tinymce-plugin-responsive-image": "^1.0.0"
     }
 }

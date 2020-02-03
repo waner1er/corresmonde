@@ -1,35 +1,71 @@
-@extends('layouts.app')
+@extends('layouts.back')
 
 @section('content')
-  <br>
-   <div class="row">
-        <div class="col-12">
-            <a href="{{ route('products.create') }}" class="btn btn-success mb-2">Ajouter</a>
+<style>
+    .editButton{margin:1rem;}
+    </style>
 
-          <table class="table table-bordered" id="laravel_crud">
+<h2 class="text-center text-success mt-5 b-3">Parcours </h2>
+   <div class="row">
+        <div class="col-lg-12">
+            <a href="{{ route('products.create') }}" class="btn btn-success my-2">+</a>
+
+          <table class="col-lg-12 table table-bordered table-striped" id="laravel_crud">
            <thead>
               <tr>
-                 <th>N°</th>
-                 <th>Titre</th>
-                 <th>Description</th>
-                 <th>Date de création</th>
-                 <td colspan="2">Action</td>
+                  <th>N°</th>
+                 <th>Titres</th>
+                 <th colspan="2">Action</th>
               </tr>
            </thead>
            <tbody>
               @foreach($products as $product)
               <tr>
-                 <td>{{ $product->numArticle }}</td>
-                 <td>{{ $product->title }}</td>
-                 <td><div class="cellContent">{!!  $product->description !!}</div></td>
-              <td>Le{{  date('d/m/Y, à H', strtotime($product->created_at))  }} h {{date('i', strtotime($product->created_at))}} </td>
-                 <td style="display:flex;justify-content: space-around;"><a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary">Modifier</a>
+                  <td>{{ $product->numArticle }}</td>
+                 <td >
+                    @guest
+                    <h3 class="text-center">   {{ $product->title }}</h3>
+                    <td><div class="cellContent">{!!  $product->description !!}</div></td>
 
-                 <form action="{{ route('products.destroy', $product->id)}}" method="post">
-                  {{ csrf_field() }}
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Supprimer</button>
-                </form>
+
+                    @else
+                    <a href="{{ route('products.edit',$product->id)}}">
+                        <h3 class="text-center">   {{ $product->title }}</h3>
+                    </a>
+                </td>
+                 {{-- <td><div class="cellContent">{!!  $product->description !!}</div></td> --}}
+                 <td>
+
+
+                        <div class="row d-flex justify-content-around ">
+                            <a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary editButton">Modifier</a>
+
+
+                            <button class="btn btn-danger editButton" data-toggle="modal" data-target="#myModal" >Supprimer</button>
+                            <div id="myModal" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                      <div class="modal-body">
+                                        <p>Voulez vous vraiment supprimer cet article ?</p>
+                                      </div>
+                                    <div class="modal-footer">
+                                        <form action="{{ route('products.destroy', $product->id)}}" method="post">
+                                            {{ csrf_field() }}
+                                            @method('DELETE')
+                                            <input type="submit" class="btn btn-danger"  value="supprimer">
+                                        </form>
+
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal" aria-hidden="true">Non</button>
+                                    </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        @endguest
+
                 </td>
               </tr>
               @endforeach
@@ -37,5 +73,9 @@
           </table>
           {!! $products->links() !!}
        </div>
+
    </div>
+
+
+
  @endsection

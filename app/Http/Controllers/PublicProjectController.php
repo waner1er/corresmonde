@@ -18,7 +18,7 @@ class publicProjectController extends Controller
         $data['projects'] = Project::orderBy('projectTitle','asc')->paginate(10);
 
 
-        return view('frontend.projet',$data);
+        return view('project.projet',$data);
     }
 
 

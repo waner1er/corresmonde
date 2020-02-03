@@ -1,7 +1,7 @@
-@extends('layouts.edit')
+@extends('layouts.back')
 
 @section('content')
-<h2 style="margin-top: 12px;" class="text-center">Add Project</a></h2>
+<h2  class="my-5 text-center text-success">Objectifs</a></h2>
 <br>
 
 <form action="{{ route('projects.store') }}" method="POST" name="add_project">
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="col-md-12">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
     </div>
 </div>
 

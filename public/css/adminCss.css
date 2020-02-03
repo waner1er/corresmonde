@@ -47,11 +47,13 @@
       margin-left: -20rem;
     }
   }
+  @media(max-width:524px){
+    #page-content-wrapper {
+    margin-left: 2rem;
+    }
+  }
   .SubTitle {
     "margin-top: 12px;
 }
-.cellContent{
-    height:140px;
-    overflow:hidden
-}
+
 

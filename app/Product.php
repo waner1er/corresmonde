@@ -10,5 +10,12 @@
     ];
 
 
+    public function illustrations() {
+        return $this->hasMany('App\Illustration');
+    }
+
+    public function comments() {
+        return $this->hasMany('App\Product');
+    }
 
  }

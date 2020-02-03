@@ -10,10 +10,7 @@ use PDF;
 class UnderstandingMigrationsController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +18,7 @@ class UnderstandingMigrationsController extends Controller
      */
     public function index()
     {
-        $data['understandings'] = UnderstandingMigrations::orderBy('understandingTitle','asc')->paginate(10);
+        $data['understandings'] = UnderstandingMigrations::orderBy('understandingTitle','asc')->paginate(1);
 
         return view('understanding.list',$data);
     }
@@ -52,7 +49,7 @@ class UnderstandingMigrationsController extends Controller
 
         UnderstandingMigrations::create($request->all());
 
-        // return Redirect::to('understandings')->with('success','Greate! understanding created successfully.');
+        return Redirect::to('understandings')->with('success','Greate! understanding created successfully.');
     }
 
     /**

@@ -21,6 +21,8 @@
             }
         });
 
+
+
 // NANTES
         var marker1 = new google.maps.Marker();
         marker1.setPosition(new google.maps.LatLng(47.21,-1.55));
@@ -130,9 +132,9 @@
         google.maps.event.addListener(marker8, 'click', function() {
         infowindow8.open(map, marker8);
         });
-// Navidullah 
+// Navidullah
         var marker9 = new google.maps.Marker();
-        marker9.setPosition(new google.maps.LatLng(33.927125,67.721655 ));
+        marker9.setPosition(new google.maps.LatLng( 33.927125,67.721655 ));
         marker9.setIcon('https://img.icons8.com/color/24/000000/rucksack.png');
         marker9.setTitle("SYRIE");
         marker9.setMap(map);

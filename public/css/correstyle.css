@@ -1,4 +1,4 @@
-
+/*
 
 
 
@@ -29,16 +29,14 @@
     .jumbotron h1{
       font-size: 1.5rem;
     }
-    .titre{
-        margin:8rem 0;
-        }
+
   }
   #test{
       border:1px solid black;
       box-shadow: 3px 3px 3px black;
   }
 
-  #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+  #map{
     height:600px;
 }
 
@@ -46,4 +44,4 @@
     text-transform: uppercase;
 
 }
-
+ */

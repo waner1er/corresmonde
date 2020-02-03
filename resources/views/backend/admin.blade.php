@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.back')
 @section('content')
 
 
@@ -16,34 +16,38 @@ text-transform:capitalize;
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                @guest
+                <div class="card-header text-center"><h2>Bienvenue  !!</h2></div>
+                @else
                 <div class="card-header">Bienvenue {{ Auth::user()->name }}  !!
                 </div>
+                @endguest
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                    @guest
 
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-
-                    <h1 class="text-success">Vous êtes connecté </h1>
+                    <h1 class="text-success">Vous êtes connecté sur l'espace élèves</h1>
                 </div>
             </div>
             <br>
-
-            <div class="row newUser">
+                    @else
+        <h1 class="text-success text-center">Vous êtes connecté sur l'espace Administrateur</h1>
+                </div>
+    </div>
+            <br>
+    <div class="row newUser">
                 <div>
                     <h3>Enregistrer un nouvel administrateur :</h3>
                 </div>
+
                 <div>
-                    @if (Route::has('register'))
                     <a class="btn btn-success" href="{{ route('register') }}">Inscription</a>
-                    @endif
                 </div>
+
             </div>
-        </div>
+            @endguest
+
+</div>
 
     </div>
 </div>

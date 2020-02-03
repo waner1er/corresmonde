@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.back')
 
 @section('content')
 <link rel="stylesheet" href="../../css/sandstone.css">
