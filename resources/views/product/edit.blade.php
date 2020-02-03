@@ -52,7 +52,7 @@
     <div class="col-md-4">
         <div class="form-group">
             <strong>photo1</strong>
-            <textarea class="image" col="4" name="photo1" placeholder="Ecrire un article">{!! $product_info->illustrations !!}
+            <textarea class="image" col="4" name="photo1" placeholder="Ecrire un article">{!! $product_info->photo1 !!}
             </textarea>
             <span class="text-danger">{{ $errors->first('photo1') }}</span>
         </div>
@@ -75,6 +75,7 @@
             <span class="text-danger">{{ $errors->first('photo3') }}</span>
         </div>
     </div>
+<form action=""></form>
 
     <div class="col-lg-12">
         <button type="submit" class="btn btn-primary">Valider</button>

@@ -55,6 +55,8 @@
     </div>
   <div class="col-lg-12 mb-5">
     @foreach ($products as $product )
+
+
     <a class="btn btn-success mx-2 my-2 infobulle" href="{{ route('ressources.edit',$product->id)}}">
       <div>{{ $product->title }}</div>
       <span>{{ $product->title }}</span>
@@ -75,7 +77,7 @@
 
     </div>
 
-    {{-- <div class="col-lg-3 border bg-light">
+    <div class="col-lg-3 border bg-light">
         <h2 class="text-success text-center bg-white rightMenuTitle mt-2 py-2">Images</h2>
         <div class="my-3 text-center bg-light ">
             <a href="{{ $product_info->photo1 }}" data-toggle="lightbox"data-gallery="photos">
@@ -94,13 +96,32 @@
               <img width="100%" src="{{ $product_info->photo3 }}" alt="">
             </a>
         </div>
-    </div> --}}
+    </div>
 
       </div>
 
-</div>
-{!! $products->links() !!}
 
+
+{{-- </div>
+<div class="container border my-3">
+    <form action="{{ url('commants') }}" method="POST">
+        {{ csrf_field() }}
+        <div class="form-group m-2">
+        <div>
+            <label for="">Commentaires </label>
+        </div>
+        <div>
+        <textarea name="body" placeholder="votre commentaire ..." class="container" cols="30" rows="3" >{{ old('body')  }} </textarea>
+        <button class="btn btn-dark">Commenter</button>
+        </div>
+    </form>
+</div> --}}
+
+
+
+
+
+</div>
 
 <script>
 

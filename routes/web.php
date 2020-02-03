@@ -41,14 +41,16 @@ Route::get('foo', function () {
 // ADMIN
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::resource('products', 'ProductController');
+
 Route::resource('projects', 'ProjectController');
 Route::resource('deroules', 'DerouleController');
 Route::resource('understandings', 'UnderstandingMigrationsController');
 Route::resource('periples', 'PeripleController');
 Route::resource('rencontres', 'RencontreController');
 Route::resource('sources', 'SourceController');
-Route::resource('illustrations', 'IllustrationsController');
-
+Route::resource('illustrations', 'IllustrationController');
+Route::resource('commants', 'CommantsController');
+// Route::post('commants', 'CommantsController@store');
 
 Route::resource ('illustration', 'IllustrationsController', [
         'only' => ['create', 'store', 'destroy', 'update']

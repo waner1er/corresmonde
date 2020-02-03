@@ -14,15 +14,11 @@ class CreateIllustrationsTable extends Migration
     public function up()
     {
         Schema::create('illustrations', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('photo');
-            $table->Integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->integer('product_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
-
-
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

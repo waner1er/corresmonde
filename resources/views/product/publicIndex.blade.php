@@ -45,14 +45,16 @@
         </div>
         <div class="col-lg-3 my-4">
             <div class="col-lg-12 text-center">
-                {!! $product->illustrations  !!}
-                </div>
+                {{-- <div class="text-center"><img width="150"src="{{ $product->photo1 }}" alt="image"> --}}
+                <div class="text-center"><img width="150"src="{{ $product->photo1}}" alt="image">
+                    {{ $product->illustrations }}
             </div>
         </div>
     </div>
+        </div>
+
 
         @endforeach
-
 
         {!! $products->links() !!}
 

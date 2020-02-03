@@ -2,29 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Illustration;
 use Illuminate\Http\Request;
+use App\Commant;
 use App\Product;
-use App\User;
 
-class PublicProductController extends Controller
+class CommantsController extends Controller
 {
-      /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data['products'] = Product::with(['illustrations' => function($query) {
-            $query->orderBy('id','asc');
-        }])->orderBy('numArticle','asc')->paginate(5);
-
-
-
-        return view('product.publicIndex',$data);
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -42,45 +34,43 @@ class PublicProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Product $product)
     {
-        //
+        Commant::create([
+            // 'user_id' =>auth()->id(),
+            'product_id' => $product->id,
+            'body'=>request('body')
+        ]);
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $where = array('id' => $id);
-        $data['product_info'] = Product::where($where)->first();
-        $data['products'] = Product::orderBy('numArticle','asc')->paginate(3);
-        $data['illustrations'] = Illustration::orderBy('id','asc')->paginate(10);
-
-
-
-        return view('product.articlePublicProduct', $data);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,11 +81,11 @@ class PublicProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-       //
+        //
     }
 }
